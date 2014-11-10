@@ -3,7 +3,11 @@ package model;
 import java.util.Observable;
 
 public class Sheet extends Observable{
-	//TODO
+	
+	private SlotFactory slotFactory;
+
+	
+	
 	public void update(){
 		//TODO
 	}
