@@ -6,4 +6,7 @@ public abstract class Slot extends Observable{
 	public void update(){
 		//TODO
 	}
+	public double getValue(){
+		return 0;
+	}
 }
