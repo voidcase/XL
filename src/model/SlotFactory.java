@@ -9,5 +9,4 @@ public class SlotFactory {
 	public Slot newSlot(String string) {
 		return null;
 	}
-	
 }
