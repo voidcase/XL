@@ -8,7 +8,7 @@ public abstract class Slot extends Observable{
 	public void update(){
 		//TODO
 	}
-	public double getValue(Environment e){
+	public double value(Environment e){
 		return 0;
 	}
 }
