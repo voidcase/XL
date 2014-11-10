@@ -9,10 +9,7 @@ public class Sheet extends Observable implements Environment{
 	//TODO
 	private SlotFactory slotFactory;
 	private Slot current;
-
-	public void update(){
-		//TODO
-	}
+	private SlotList slotList;
 
 	@Override
 	public double value(String name) {
