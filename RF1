@@ -1,0 +1,45 @@
+1.
+Slot
+Sheet
+ExprSlot
+CommentSlot
+SlotList
+SlotFactory
+
+2.
+Klasserna för "kommentar-slot" och "uttryck-slot" får ha en gemensam abstrakt superklass, slot.
+
+3.
+Genom att inte definiera storleken på arket i modellen. Cellerna skapas enskilt när de får innehåll.
+
+4.
+Observable------------------------------
+XLList
+Slot
+Sheet
+
+Observer--------------------------------
+StatusLabel
+WindowMenu
+Slot
+CurrentLabel
+StatusLabel
+Editor
+
+5.
+Model, Sheet
+
+6.
+Programmet kan startas och ett helt statiskt rutnät visas samt en textbox som går att redigera men som inte gör något. Man kan ändra filnamnet och skapa nya ark.
+
+7.
+I modellen.
+
+8.
+Variable
+
+9.
+Sheet, För att Expr inte ska vara beroende av modellen utan tvärt om.
+
+10.
+-
