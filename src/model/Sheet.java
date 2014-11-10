@@ -8,6 +8,7 @@ import expr.Environment;
 public class Sheet extends Observable implements Environment{
 	//TODO
 	private SlotFactory slotFactory;
+	private Slot current;
 
 	public void update(){
 		//TODO
