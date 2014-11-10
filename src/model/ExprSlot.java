@@ -9,4 +9,5 @@ public class ExprSlot {
 	public double getValue(Environment env){ //TODO Osäker här.
 		return ex.value(env);
 	}
+	
 }
