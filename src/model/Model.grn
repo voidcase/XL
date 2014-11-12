@@ -43,13 +43,6 @@
       <y="245"/>
    </type>
    <relationship>
-      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
-      <sourceType="=XL/src<model{Sheet.java[Sheet"/>
-      <targetType="=XL/src<model{SlotFactory.java[SlotFactory"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<model{ExprSlot.java[ExprSlot"/>
       <targetType="=XL/src<model{Slot.java[Slot"/>
@@ -60,6 +53,13 @@
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<model{CommentSlot.java[CommentSlot"/>
       <targetType="=XL/src<model{Slot.java[Slot"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <sourceType="=XL/src<model{Sheet.java[Sheet"/>
+      <targetType="=XL/src<model{SlotFactory.java[SlotFactory"/>
       <bendpoints>
       </bendpoints>
    </relationship>
