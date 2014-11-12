@@ -21,8 +21,16 @@ public class Sheet extends Observable implements Environment{
 		return 0;
 	}
 	
-	public void setCurrent(String slot){
-		currentSlot = slot;
+	public void setCurrent(String address){
+		currentSlot = address;
+	}
+	
+	public void createSlot(String text){
+		
+	}
+	
+	public String getSlotText(String address){
+		return slotList.get(address).toString();
 	}
 
 }
