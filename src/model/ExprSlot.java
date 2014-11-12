@@ -9,5 +9,8 @@ public class ExprSlot {
 	public double value(Environment env){ //TODO Osäker här.
 		return ex.value(env);
 	}
+	public String toString(){
+		return ex.toString();
+	}
 	
 }
