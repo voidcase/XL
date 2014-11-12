@@ -1,131 +1,82 @@
 <uml>
-   <greenVersion="30100"/>
+   <greenVersion="30500"/>
    <type>
       <name="=XL/src<gui.menu{SaveMenuItem.java[SaveMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="644"/>
-      <y="460"/>
+      <x="787"/>
+      <y="374"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{ClearAllMenuItem.java[ClearAllMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="200"/>
-      <y="0"/>
+      <x="290"/>
+      <y="86"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{CloseMenuItem.java[CloseMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="400"/>
-      <y="0"/>
+      <x="801"/>
+      <y="71"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{ClearMenuItem.java[ClearMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="663"/>
-      <y="21"/>
+      <x="809"/>
+      <y="240"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{PrintMenuItem.java[PrintMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="0"/>
-      <y="200"/>
+      <x="11"/>
+      <y="394"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{OpenMenuItem.java[OpenMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="348"/>
-      <y="273"/>
+      <x="757"/>
+      <y="528"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{WindowMenuItem.java[WindowMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="452"/>
-      <y="153"/>
+      <x="6"/>
+      <y="29"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{WindowMenu.java[WindowMenu"/>
       <height="-1"/>
       <width="-1"/>
-      <x="34"/>
-      <y="107"/>
+      <x="16"/>
+      <y="237"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
       <height="-1"/>
       <width="-1"/>
-      <x="0"/>
-      <y="400"/>
+      <x="325"/>
+      <y="343"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{LoadMenuItem.java[LoadMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="374"/>
-      <y="459"/>
+      <x="399"/>
+      <y="542"/>
    </type>
    <type>
       <name="=XL/src<gui.menu{NewMenuItem.java[NewMenuItem"/>
       <height="-1"/>
       <width="-1"/>
-      <x="69"/>
-      <y="494"/>
+      <x="107"/>
+      <y="585"/>
    </type>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
-      <targetType="=XL/src<gui.menu{PrintMenuItem.java[PrintMenuItem"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
-      <targetType="=XL/src<gui.menu{SaveMenuItem.java[SaveMenuItem"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
-      <targetType="=XL/src<gui.menu{ClearMenuItem.java[ClearMenuItem"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=XL/src<gui.menu{SaveMenuItem.java[SaveMenuItem"/>
-      <targetType="=XL/src<gui.menu{OpenMenuItem.java[OpenMenuItem"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
-      <targetType="=XL/src<gui.menu{CloseMenuItem.java[CloseMenuItem"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
-      <targetType="=XL/src<gui.menu{LoadMenuItem.java[LoadMenuItem"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=XL/src<gui.menu{WindowMenu.java[WindowMenu"/>
-      <targetType="=XL/src<gui.menu{WindowMenuItem.java[WindowMenuItem"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<gui.menu{LoadMenuItem.java[LoadMenuItem"/>
@@ -143,6 +94,34 @@
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
       <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
+      <targetType="=XL/src<gui.menu{SaveMenuItem.java[SaveMenuItem"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=XL/src<gui.menu{SaveMenuItem.java[SaveMenuItem"/>
+      <targetType="=XL/src<gui.menu{OpenMenuItem.java[OpenMenuItem"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
+      <targetType="=XL/src<gui.menu{LoadMenuItem.java[LoadMenuItem"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
+      <targetType="=XL/src<gui.menu{ClearMenuItem.java[ClearMenuItem"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
       <targetType="=XL/src<gui.menu{WindowMenu.java[WindowMenu"/>
       <bendpoints>
       </bendpoints>
@@ -150,7 +129,28 @@
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
       <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
+      <targetType="=XL/src<gui.menu{CloseMenuItem.java[CloseMenuItem"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui.menu{WindowMenu.java[WindowMenu"/>
+      <targetType="=XL/src<gui.menu{WindowMenuItem.java[WindowMenuItem"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
       <targetType="=XL/src<gui.menu{ClearAllMenuItem.java[ClearAllMenuItem"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui.menu{XLMenuBar.java[XLMenuBar"/>
+      <targetType="=XL/src<gui.menu{PrintMenuItem.java[PrintMenuItem"/>
       <bendpoints>
       </bendpoints>
    </relationship>
