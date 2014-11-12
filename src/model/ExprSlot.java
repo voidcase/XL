@@ -5,7 +5,9 @@ import expr.Expr;
 
 public class ExprSlot {
 	Expr ex;
-	
+	public ExprSlot(){
+		
+	}
 	public double value(Environment env){ //TODO Osäker här.
 		return ex.value(env);
 	}
