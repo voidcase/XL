@@ -34,6 +34,9 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public String getSlotText(String address){
+		if (!slotList.exists(address)){
+			return "";
+		}
 		return slotList.get(address).toString();
 	}
 }
