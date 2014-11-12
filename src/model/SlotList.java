@@ -9,4 +9,8 @@ public class SlotList {
 	public SlotList(){
 		slotMap = new HashMap<String, Slot>();
 	}
+	
+	public void addSlot(String address, Slot slot){
+		
+	}
 }

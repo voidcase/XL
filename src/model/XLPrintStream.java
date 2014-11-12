@@ -5,7 +5,6 @@ import java.io.PrintStream;
 import java.util.Map.Entry;
 import java.util.Set;
 
-//TODO move to another package
 public class XLPrintStream extends PrintStream {
     public XLPrintStream(String fileName) throws FileNotFoundException {
         super(fileName);

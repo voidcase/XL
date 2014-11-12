@@ -11,22 +11,22 @@
       <name="=XL/src<model{Sheet.java[Sheet"/>
       <height="-1"/>
       <width="-1"/>
-      <x="479"/>
-      <y="116"/>
+      <x="392"/>
+      <y="115"/>
    </type>
    <type>
       <name="=XL/src<model{SlotList.java[SlotList"/>
       <height="-1"/>
       <width="-1"/>
-      <x="400"/>
-      <y="0"/>
+      <x="742"/>
+      <y="301"/>
    </type>
    <type>
       <name="=XL/src<model{SlotFactory.java[SlotFactory"/>
       <height="-1"/>
       <width="-1"/>
-      <x="600"/>
-      <y="0"/>
+      <x="546"/>
+      <y="299"/>
    </type>
    <type>
       <name="=XL/src<model{Slot.java[Slot"/>
@@ -45,6 +45,13 @@
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<model{CommentSlot.java[CommentSlot"/>
+      <targetType="=XL/src<model{Slot.java[Slot"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=XL/src<model{ExprSlot.java[ExprSlot"/>
       <targetType="=XL/src<model{Slot.java[Slot"/>
       <bendpoints>
       </bendpoints>
