@@ -3,7 +3,7 @@ package model;
 import expr.Environment;
 import expr.Expr;
 
-public class ExprSlot {
+public class ExprSlot extends Slot{
 	Expr ex;
 	public ExprSlot(){
 		
