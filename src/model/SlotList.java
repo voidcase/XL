@@ -1,11 +1,12 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SlotList {
-	ArrayList<Slot> slots;
+	Map<String, Slot> slotMap;
 	//TODO
 	public SlotList(){
-		
+		slotMap = new HashMap<String, Slot>();
 	}
 }

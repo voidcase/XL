@@ -8,4 +8,6 @@ public abstract class Slot extends Observable{
 	public double value(Environment e){
 		return 0;
 	}
+	
+	public abstract String toString();
 }
