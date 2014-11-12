@@ -11,7 +11,7 @@ public class SlotList {
 		slotMap = new HashMap<String, Slot>();
 	}
 
-	public Slot putSlot(String address, Slot slot) {
+	public Slot put(String address, Slot slot) {
 		return slotMap.put(address, slot);
 	}
 
@@ -22,6 +22,10 @@ public class SlotList {
 
 	public Slot remove(String address) {
 		return null;
+	}
+	
+	public boolean exists(String address) {
+		return slotMap.containsKey(address);
 	}
 
 }

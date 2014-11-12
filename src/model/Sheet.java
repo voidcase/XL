@@ -20,8 +20,20 @@ public class Sheet extends Observable implements Environment{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	public String getCurrent() {
+		return currentSlot;	
+	}
 	
-	public void setCurrent(String slot){
-		currentSlot = slot;
+	public void setCurrent(String address){
+		currentSlot = address;
+	}
+	
+	public void createSlot(String text){
+		
+	}
+	
+	public String getSlotText(String address){
+		return slotList.get(address).toString();
 	}
 }
