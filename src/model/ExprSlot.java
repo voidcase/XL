@@ -10,6 +10,7 @@ public class ExprSlot extends Slot {
 		ex = expr;
 	}
 
+	@Override 
 	public double value(Environment env) { // TODO Osäker här.
 		return ex.value(env);
 	}
