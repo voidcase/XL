@@ -24,5 +24,4 @@ public class Sheet extends Observable implements Environment{
 	public void setCurrent(String slot){
 		currentSlot = slot;
 	}
-
 }
