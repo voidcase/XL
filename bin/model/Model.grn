@@ -1,5 +1,5 @@
 <uml>
-   <greenVersion="30100"/>
+   <greenVersion="30500"/>
    <type>
       <name="=XL/src<model{CommentSlot.java[CommentSlot"/>
       <height="-1"/>
@@ -46,6 +46,16 @@
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<model{ExprSlot.java[ExprSlot"/>
       <targetType="=XL/src<model{Slot.java[Slot"/>
+<<<<<<< HEAD
+=======
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <sourceType="=XL/src<model{Sheet.java[Sheet"/>
+      <targetType="=XL/src<model{SlotFactory.java[SlotFactory"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>

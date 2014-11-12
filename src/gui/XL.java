@@ -15,7 +15,10 @@ public class XL extends JFrame implements Printable {
     private static final int ROWS = 10, COLUMNS = 8;
     private XLCounter counter;
     private StatusLabel statusLabel = new StatusLabel();
+    private CurrentLabel currentLabel = new CurrentLabel();
     private XLList xlList;
+
+	//TODO: hold a sheet!
 
     public XL(XL oldXL) {
         this(oldXL.xlList, oldXL.counter);
@@ -27,9 +30,10 @@ public class XL extends JFrame implements Printable {
         this.counter = counter;
         xlList.add(this);
         counter.increment();
-        JPanel statusPanel = new StatusPanel(statusLabel);
+        JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
         JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
-        Editor editor = new Editor();
+        Editor editor = new Editor();	
+	//TODO: add observers to sheet
         add(NORTH, statusPanel);
         add(CENTER, editor);
         add(SOUTH, sheetPanel);

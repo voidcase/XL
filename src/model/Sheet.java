@@ -10,6 +10,11 @@ public class Sheet extends Observable implements Environment{
 	private SlotFactory slotFactory;
 	private String currentSlot;
 	private SlotList slotList;
+	private String status;
+	
+	public String getStatus() {
+		return status;
+	}
 
 	public Sheet(){
 		slotFactory = new SlotFactory();

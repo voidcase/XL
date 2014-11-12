@@ -1,116 +1,116 @@
 <uml>
-   <greenVersion="30100"/>
+   <greenVersion="30500"/>
    <type>
       <name="=XL/src<gui{NumberAdjustment.java[NumberAdjustment"/>
       <height="-1"/>
       <width="-1"/>
-      <x="846"/>
-      <y="388"/>
+      <x="662"/>
+      <y="467"/>
    </type>
    <type>
       <name="=XL/src<gui{CurrentLabel.java[CurrentLabel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="104"/>
-      <y="32"/>
+      <x="653"/>
+      <y="326"/>
    </type>
    <type>
       <name="=XL/src<gui{GridPanel.java[GridPanel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="203"/>
-      <y="441"/>
+      <x="736"/>
+      <y="110"/>
    </type>
    <type>
       <name="=XL/src<gui{ColoredLabel.java[ColoredLabel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="330"/>
-      <y="13"/>
+      <x="389"/>
+      <y="157"/>
    </type>
    <type>
       <name="=XL/src<gui{Editor.java[Editor"/>
       <height="-1"/>
       <width="-1"/>
-      <x="919"/>
-      <y="278"/>
+      <x="350"/>
+      <y="326"/>
    </type>
    <type>
       <name="=XL/src<gui{StatusLabel.java[StatusLabel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="200"/>
-      <y="200"/>
+      <x="16"/>
+      <y="215"/>
    </type>
    <type>
       <name="=XL/src<gui{Adjustment.java[Adjustment"/>
       <height="-1"/>
       <width="-1"/>
-      <x="709"/>
-      <y="267"/>
+      <x="1018"/>
+      <y="432"/>
    </type>
    <type>
       <name="=XL/src<gui{StatusPanel.java[StatusPanel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="901"/>
-      <y="575"/>
+      <x="980"/>
+      <y="298"/>
    </type>
    <type>
       <name="=XL/src<gui{XLCounter.java[XLCounter"/>
       <height="-1"/>
       <width="-1"/>
-      <x="23"/>
-      <y="245"/>
+      <x="47"/>
+      <y="589"/>
    </type>
    <type>
       <name="=XL/src<gui{RowLabels.java[RowLabels"/>
       <height="-1"/>
       <width="-1"/>
-      <x="218"/>
-      <y="320"/>
+      <x="740"/>
+      <y="234"/>
    </type>
    <type>
       <name="=XL/src<gui{SlotLabel.java[SlotLabel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="464"/>
-      <y="290"/>
+      <x="49"/>
+      <y="9"/>
    </type>
    <type>
       <name="=XL/src<gui{SlotLabels.java[SlotLabels"/>
       <height="-1"/>
       <width="-1"/>
-      <x="545"/>
-      <y="178"/>
+      <x="468"/>
+      <y="22"/>
    </type>
    <type>
       <name="=XL/src<gui{XLList.java[XLList"/>
       <height="-1"/>
       <width="-1"/>
-      <x="23"/>
-      <y="332"/>
+      <x="45"/>
+      <y="398"/>
    </type>
    <type>
       <name="=XL/src<gui{BorderPanel.java[BorderPanel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="749"/>
-      <y="580"/>
+      <x="994"/>
+      <y="188"/>
    </type>
    <type>
       <name="=XL/src<gui{SheetPanel.java[SheetPanel"/>
       <height="-1"/>
       <width="-1"/>
-      <x="424"/>
-      <y="431"/>
+      <x="1003"/>
+      <y="20"/>
    </type>
    <type>
       <name="=XL/src<gui{XL.java[XL"/>
       <height="-1"/>
       <width="-1"/>
-      <x="807"/>
-      <y="28"/>
+      <x="303"/>
+      <y="462"/>
    </type>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
@@ -127,8 +127,13 @@
       </bendpoints>
    </relationship>
    <relationship>
+<<<<<<< HEAD
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
       <sourceType="=XL/src<gui{RowLabels.java[RowLabels"/>
+=======
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=XL/src<gui{StatusLabel.java[StatusLabel"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <targetType="=XL/src<gui{ColoredLabel.java[ColoredLabel"/>
       <bendpoints>
       </bendpoints>
@@ -142,8 +147,34 @@
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+<<<<<<< HEAD
       <sourceType="=XL/src<gui{SheetPanel.java[SheetPanel"/>
       <targetType="=XL/src<gui{BorderPanel.java[BorderPanel"/>
+=======
+      <sourceType="=XL/src<gui{NumberAdjustment.java[NumberAdjustment"/>
+      <targetType="=XL/src<gui{Adjustment.java[Adjustment"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=XL/src<gui{XL.java[XL"/>
+      <targetType="=XL/src<gui{XLList.java[XLList"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=XL/src<gui{XL.java[XL"/>
+      <targetType="=XL/src<gui{XLCounter.java[XLCounter"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=XL/src<gui{CurrentLabel.java[CurrentLabel"/>
+      <targetType="=XL/src<gui{ColoredLabel.java[ColoredLabel"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>
@@ -163,33 +194,50 @@
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=XL/src<gui{SlotLabels.java[SlotLabels"/>
-      <targetType="=XL/src<gui{GridPanel.java[GridPanel"/>
+      <sourceType="=XL/src<gui{SheetPanel.java[SheetPanel"/>
+      <targetType="=XL/src<gui{BorderPanel.java[BorderPanel"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+<<<<<<< HEAD
       <sourceType="=XL/src<gui{RowLabels.java[RowLabels"/>
       <targetType="=XL/src<gui{GridPanel.java[GridPanel"/>
+=======
+      <sourceType="=XL/src<gui{SlotLabel.java[SlotLabel"/>
+      <targetType="=XL/src<gui{ColoredLabel.java[ColoredLabel"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+<<<<<<< HEAD
       <sourceType="=XL/src<gui{SlotLabel.java[SlotLabel"/>
       <targetType="=XL/src<gui{ColoredLabel.java[ColoredLabel"/>
+=======
+      <sourceType="=XL/src<gui{StatusPanel.java[StatusPanel"/>
+      <targetType="=XL/src<gui{BorderPanel.java[BorderPanel"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
+<<<<<<< HEAD
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<gui{StatusLabel.java[StatusLabel"/>
       <targetType="=XL/src<gui{ColoredLabel.java[ColoredLabel"/>
+=======
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui{SheetPanel.java[SheetPanel"/>
+      <targetType="=XL/src<gui{SlotLabels.java[SlotLabels"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
+<<<<<<< HEAD
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
       <sourceType="=XL/src<gui{StatusPanel.java[StatusPanel"/>
       <targetType="=XL/src<gui{CurrentLabel.java[CurrentLabel"/>
@@ -200,13 +248,24 @@
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyLPart"/>
       <sourceType="=XL/src<gui{XL.java[XL"/>
       <targetType="=XL/src<gui{Editor.java[Editor"/>
+=======
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=XL/src<gui{SlotLabels.java[SlotLabels"/>
+      <targetType="=XL/src<gui{GridPanel.java[GridPanel"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
+<<<<<<< HEAD
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<gui{CurrentLabel.java[CurrentLabel"/>
       <targetType="=XL/src<gui{ColoredLabel.java[ColoredLabel"/>
+=======
+      <class="edu.buffalo.cse.green.relationship.composition.CompositionPart"/>
+      <sourceType="=XL/src<gui{SlotLabels.java[SlotLabels"/>
+      <targetType="=XL/src<gui{SlotLabel.java[SlotLabel"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>
@@ -218,9 +277,15 @@
       </bendpoints>
    </relationship>
    <relationship>
+<<<<<<< HEAD
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
       <sourceType="=XL/src<gui{NumberAdjustment.java[NumberAdjustment"/>
       <targetType="=XL/src<gui{Adjustment.java[Adjustment"/>
+=======
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=XL/src<gui{SheetPanel.java[SheetPanel"/>
+      <targetType="=XL/src<gui{RowLabels.java[RowLabels"/>
+>>>>>>> d3f83c4bc6b6d503dec634c848fff0f82b97cf50
       <bendpoints>
       </bendpoints>
    </relationship>
