@@ -20,6 +20,10 @@ public class Sheet extends Observable implements Environment{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	public String getCurrent() {
+		return currentSlot;	
+	}
 	
 	public void setCurrent(String address){
 		currentSlot = address;

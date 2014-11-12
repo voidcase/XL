@@ -11,7 +11,7 @@ public class SlotList {
 		slotMap = new HashMap<String, Slot>();
 	}
 
-	public Slot putSlot(String address, Slot slot) {
+	public Slot put(String address, Slot slot) {
 		return slotMap.put(address, slot);
 	}
 
