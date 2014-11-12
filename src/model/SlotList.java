@@ -23,5 +23,9 @@ public class SlotList {
 	public Slot remove(String address) {
 		return null;
 	}
+	
+	public boolean exists(String address) {
+		return slotMap.containsKey(address);
+	}
 
 }
