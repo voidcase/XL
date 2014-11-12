@@ -12,7 +12,7 @@ public class Sheet extends Observable implements Environment{
 	private SlotList slotList;
 
 	public Sheet(){
-		
+		slotFactory = new SlotFactory();
 	}
 	
 	@Override
