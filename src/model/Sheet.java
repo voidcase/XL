@@ -49,7 +49,7 @@ public class Sheet extends Observable implements Environment{
 		return slotMap.get(address).toString();
 	}
 	
-	public void update() {
+	public void update(String address, Object somethingFixLater) {
 		
 	}
 }
