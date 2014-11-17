@@ -1,11 +1,12 @@
 package model;
-import java.util.Observable;
 
 import expr.Environment;
 
-public abstract class Slot extends Observable{
+public abstract class Slot {
 	//TODO
 	public double value(Environment e){
 		return 0;
 	}
+	
+	public abstract String toString();
 }

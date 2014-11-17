@@ -15,15 +15,12 @@ Genom att inte definiera storleken på arket i modellen. Cellerna skapas enskilt
 4.
 Observable------------------------------
 XLList
-Slot
 Sheet
 
 Observer--------------------------------
 StatusLabel
 WindowMenu
-Slot
 CurrentLabel
-StatusLabel
 Editor
 
 5.

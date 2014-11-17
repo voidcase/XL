@@ -6,7 +6,7 @@ public class SlotFactory {
 		
 	}
 	
-	public Slot newSlot(String string) {
+	public Slot buildSlot(String string) {
 		return null;
 	}
 }
