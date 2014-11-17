@@ -22,7 +22,7 @@ public class Controller extends Observable {
     }
 
     /**
-     * Returns current slot
+     * Returns current slot address
      */
     public String getCurrent() {
 	return current;
@@ -32,8 +32,8 @@ public class Controller extends Observable {
      * Returns a string representation of the content of
      * the address slot
      */
-    public String currentString(String address) {
-	return sheet.getString(address);
+    public String currentString() {
+	return sheet.getString(current);
     }
 
     /**
