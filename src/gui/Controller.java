@@ -28,6 +28,10 @@ public class Controller extends Observable {
 	return current;
     }
 
+    /**
+     * Returns a string representation of the content of
+     * the address slot
+     */
     public String currentString(String address) {
 	return sheet.getString(address);
     }
