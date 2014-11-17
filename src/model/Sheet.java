@@ -1,5 +1,7 @@
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Observable;
 
 
@@ -9,15 +11,17 @@ public class Sheet extends Observable implements Environment{
 	//TODO
 	private SlotFactory slotFactory;
 	private String currentSlot;
-	private SlotList slotList;
+	private Map<String, Slot> slotMap;
+
 	private String status;
+	
+	public Sheet(){
+		slotFactory = new SlotFactory();
+		slotMap = new HashMap<String, Slot>();
+	}
 	
 	public String getStatus() {
 		return status;
-	}
-
-	public Sheet(){
-		slotFactory = new SlotFactory();
 	}
 	
 	@Override
@@ -39,9 +43,13 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public String getSlotText(String address){
-		if (!slotList.exists(address)){
+		if (!slotMap.containsKey(address)){
 			return "";
 		}
-		return slotList.get(address).toString();
+		return slotMap.get(address).toString();
+	}
+	
+	public void update() {
+		
 	}
 }

@@ -3,14 +3,13 @@ package model;
 import expr.Environment;
 import expr.Expr;
 
-public class ExprSlot extends Slot {
+public class ExprSlot implements Slot {
 	Expr ex;
 
 	public ExprSlot(Expr expr) {
 		ex = expr;
 	}
 
-	@Override 
 	public double value(Environment env) { // TODO Osäker här.
 		return ex.value(env);
 	}

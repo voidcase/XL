@@ -2,11 +2,7 @@ package model;
 
 import expr.Environment;
 
-public abstract class Slot {
-	//TODO
-	public double value(Environment e){
-		return 0;
-	}
-	
+public interface Slot {
+	public double value(Environment e);
 	public abstract String toString();
 }

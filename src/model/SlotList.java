@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SlotList {
+
 	Map<String, Slot> slotMap;
 
 	// TODO
@@ -27,5 +28,4 @@ public class SlotList {
 	public boolean exists(String address) {
 		return slotMap.containsKey(address);
 	}
-
 }
