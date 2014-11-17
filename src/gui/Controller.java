@@ -2,6 +2,8 @@ package gui;
 
 import java.util.Observable;
 
+import model.Sheet;
+
 public class Controller extends Observable {
     private Sheet sheet;
     private String current;
