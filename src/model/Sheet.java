@@ -8,11 +8,10 @@ import java.util.Observable;
 import expr.Environment;
 
 public class Sheet extends Observable implements Environment{
-	//TODO
+
 	private SlotFactory slotFactory;
 	private String currentSlot;
 	private Map<String, Slot> slotMap;
-
 	private String status;
 	
 	public Sheet(){
@@ -55,6 +54,6 @@ public class Sheet extends Observable implements Environment{
 
 	/** Implement toString for slot at given address here */
 	public String getString(String address) {
-
+		return "";
 	}
 }
