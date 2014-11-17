@@ -52,4 +52,9 @@ public class Sheet extends Observable implements Environment{
 	public void update(String address, Object somethingFixLater) {
 		
 	}
+
+	/** Implement toString for slot at given address here */
+	public String getString(String address) {
+
+	}
 }
