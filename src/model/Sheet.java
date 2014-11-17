@@ -10,7 +10,6 @@ import expr.Environment;
 public class Sheet extends Observable implements Environment{
 	//TODO
 	private SlotFactory slotFactory;
-	private String currentSlot;
 	private Map<String, Slot> slotMap;
 
 	private String status;
