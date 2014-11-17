@@ -49,4 +49,10 @@ public class Sheet extends Observable implements Environment{
 		return "";
 		//TODO
 	}
+	/*Isaks önskelista
+	 * Kära tomten, denna julen önskar jag mig:
+	 * remove(String address)
+	 * keySet från hashmappen.
+	 * god jul.*/
+	
 }
