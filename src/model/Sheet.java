@@ -55,6 +55,7 @@ public class Sheet extends Observable implements Environment{
 
 	/** Implement toString for slot at given address here */
 	public String getString(String address) {
-
+		return "";
+		//TODO
 	}
 }
