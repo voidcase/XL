@@ -6,7 +6,7 @@ import expr.Expr;
 import expr.ExprParser;
 
 public class SlotFactory {
-	ExprParser parser;
+	private ExprParser parser;
 
 	public SlotFactory() {
 		parser = new ExprParser();

@@ -4,12 +4,16 @@ import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.NORTH;
 import static java.awt.BorderLayout.SOUTH;
 import gui.menu.XLMenuBar;
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import model.Sheet;
 
 public class XL extends JFrame implements Printable {
     private static final int ROWS = 10, COLUMNS = 8;
@@ -17,6 +21,8 @@ public class XL extends JFrame implements Printable {
     private StatusLabel statusLabel = new StatusLabel();
     private CurrentLabel currentLabel = new CurrentLabel();
     private XLList xlList;
+    private Sheet sheet;
+    private Controller controller;
 
 	//TODO: hold a sheet!
 
@@ -32,7 +38,11 @@ public class XL extends JFrame implements Printable {
         counter.increment();
         JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
         JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
-        Editor editor = new Editor();	
+        sheet = new Sheet();
+        controller = new Controller(sheet);
+        Editor editor = new Editor(controller);	
+        
+        
 	//TODO: add observers to sheet
         add(NORTH, statusPanel);
         add(CENTER, editor);
