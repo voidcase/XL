@@ -22,7 +22,7 @@ public class Controller extends Observable {
     }
 
     /**
-     * Returns current slot
+     * Returns current slot address
      */
     public String getCurrent() {
 	return current;
