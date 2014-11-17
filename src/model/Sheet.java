@@ -30,14 +30,6 @@ public class Sheet extends Observable implements Environment{
 		return 0;
 	}
 
-	public String getCurrent() {
-		return currentSlot;	
-	}
-	
-	public void setCurrent(String address){
-		currentSlot = address;
-	}
-	
 	public void createSlot(String text){
 		
 	}
