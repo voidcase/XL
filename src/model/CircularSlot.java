@@ -9,5 +9,4 @@ public class CircularSlot implements Slot {
 		// TODO Auto-generated method stub
 		throw new XLException("Circular reference!");
 	}
-
 }

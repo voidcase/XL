@@ -13,6 +13,7 @@ class LoadMenuItem extends OpenMenuItem {
 
     protected void action(String path) throws FileNotFoundException {
         // TODO
+    	
     }
 
     protected int openDialog(JFileChooser fileChooser) {
