@@ -12,6 +12,7 @@ import java.util.Set;
 import javax.swing.JFileChooser;
 
 import model.Sheet;
+import model.XLPrintStream;
 
 class SaveMenuItem extends OpenMenuItem {
 
@@ -31,9 +32,21 @@ class SaveMenuItem extends OpenMenuItem {
 			for (String key : keys) {
 				fw.write(key + "=" + blad.getSlotText(key) + "\n");
 			}
+			fw.flush();
+			fw.close();
 		} catch (IOException e) {
 			throw new FileNotFoundException();
 		}
+//		File target = new File(path);
+//		XLPrintStream stream = new XLPrintStream(path);
+//		target.delete();
+//		Set<String> keys = blad.keySet();
+//		for (String key : keys) {
+//			stream.
+//		}
+		
+		
+		
 	}
 
 	protected int openDialog(JFileChooser fileChooser) {

@@ -14,6 +14,7 @@ import model.Sheet;
 import model.Slot;
 import model.XLBufferedReader;
 import model.XLException;
+import java.io.File;
 
 class LoadMenuItem extends OpenMenuItem {
 	private Sheet sheet;
@@ -27,7 +28,7 @@ class LoadMenuItem extends OpenMenuItem {
 		// TODO
 		try {
 			XLBufferedReader reader = new XLBufferedReader(path);
-			HashMap<String, Slot> map = new HashMap();
+			HashMap<String, Slot> map = new HashMap<String, Slot>();
 			reader.load(map);
 			sheet = new Sheet(map);	
 		} catch (XLException e){
