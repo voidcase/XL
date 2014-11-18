@@ -9,23 +9,23 @@ public class Controller extends Observable {
     private String current;
 
     public Controller(Sheet sheet) {
-	this.sheet = sheet;
-	current = "A1";
+    	this.sheet = sheet;
+		current = "A1";
     }
     
     /**
      * Sets current slot to address
      */
     public void setCurrent(String address) {
-	current = address;
-	notifyObservers();
+    	current = address;
+    	notifyObservers();
     }
 
     /**
      * Returns current slot address
      */
     public String getCurrent() {
-	return current;
+    	return current;
     }
 
     /**
@@ -33,14 +33,14 @@ public class Controller extends Observable {
      * the address slot
      */
     public String currentString() {
-	return sheet.getString(current);
+	return sheet.getSlotText(current);
     }
 
     /**
      * Enter content into current slot
      */
     public void update(String content) {
-	sheet.update(current, content);
-	notifyObservers();
+    	sheet.update(current, content);
+    	notifyObservers();
     }
 }
