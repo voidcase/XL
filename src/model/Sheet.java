@@ -3,8 +3,7 @@ package model;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
-
-
+import java.util.Set;
 import expr.Environment;
 
 public class Sheet extends Observable implements Environment{
@@ -24,11 +23,12 @@ public class Sheet extends Observable implements Environment{
 	
 	@Override
 	public double value(String name) {
-		// TODO Auto-generated method stub
-		return 0;
+		Slot tempSlot = slotMap.get(name);
+		return tempSlot.value(this);
 	}
 
 	public void createSlot(String text){
+		Slot newSlot = slotFactory.buildSlot(text);
 		
 	}
 	
@@ -42,12 +42,14 @@ public class Sheet extends Observable implements Environment{
 	public void update(String address, Object somethingFixLater) {
 		
 	}
-
-	/** Implement toString for slot at given address here */
-	public String getString(String address) {
-		return "";
+	
+	public void remove(String address) {
+		slotMap.remove(address);
 	}
-		//TODO
+	
+	public Set keySet(){
+		return slotMap.keySet();
+	}
 }
 	/*Isaks önskelista
 	 * Kära tomten, denna julen önskar jag mig:

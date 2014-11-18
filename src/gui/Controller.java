@@ -33,7 +33,7 @@ public class Controller extends Observable {
      * the address slot
      */
     public String currentString() {
-	return sheet.getString(current);
+	return sheet.getSlotText(current);
     }
 
     /**
