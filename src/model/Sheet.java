@@ -40,13 +40,14 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public void update(String address, String input) {
+		Slot oldSlot = slotMap.get(address);
 		try {
-			Slot oldSlot = slotMap.get(address);
 			createSlot(address,"CircularSlot");
 			Slot tempSlot = slotFactory.buildSlot(input);
 			double value = tempSlot.value(this);
 			createSlot(address, input);
 		} catch (XLException e) {
+			createSlot(address, oldSlot.toString());
 			throw new XLException(e.getMessage());
 		}
 	}
