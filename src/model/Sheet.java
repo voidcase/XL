@@ -60,9 +60,3 @@ public class Sheet extends Observable implements Environment{
 		return slotMap.keySet();
 	}
 }
-	/*Isaks önskelista
-	 * Kära tomten, denna julen önskar jag mig:
-	 * remove(String address)
-	 * keySet från hashmappen.
-	 * god jul.*/
-
