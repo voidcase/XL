@@ -24,8 +24,6 @@ public class XL extends JFrame implements Printable {
 	private Sheet sheet;
 	private Controller controller;
 
-	// TODO: hold a sheet!
-
 	public XL(XL oldXL) {
 		this(oldXL.xlList, oldXL.counter);
 	}
@@ -51,7 +49,7 @@ public class XL extends JFrame implements Printable {
 		add(SOUTH, sheetPanel);
 		setJMenuBar(new XLMenuBar(this, xlList, statusLabel, controller, sheet)); // kolla
 																					// konstruktorn,
-																					// får
+																					// fï¿½r
 																					// sheet
 																					// och
 																					// controller

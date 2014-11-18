@@ -22,6 +22,7 @@ public class SlotLabel extends ColoredLabel implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		sheet = (Sheet) arg0;
-		sheet.getSlotText("" + col + row);
+		String string = sheet.getSlotText("" + col + row);
+		this.setText(string);
 	}
 }
