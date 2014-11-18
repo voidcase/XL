@@ -19,6 +19,6 @@ public class CommentSlot implements Slot{
 	}
 
 	public String display(Environment e) {
-		return comment.subString(1);
+		return comment.substring(1);
 	}
 }
