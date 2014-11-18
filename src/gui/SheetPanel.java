@@ -3,6 +3,7 @@ package gui;
 import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.WEST;
 
+import java.awt.Color;
 import java.util.List;
 import java.util.Observer;
 
@@ -17,5 +18,9 @@ public class SheetPanel extends BorderPanel {
 
     public List<Observer> getListObservers() {
         return slots.listObservers();
+    }
+    
+    public void setBackgroundColor(Color color, String address) {
+    	slots.setBackgroundColor(Color.YELLOW, address);
     }
 }

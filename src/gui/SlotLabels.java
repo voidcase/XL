@@ -28,6 +28,7 @@ public class SlotLabels extends GridPanel {
         }
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
+        labelList.get(21).setBackground(Color.CYAN);
     }
 
     public List<Observer> listObservers() {
@@ -35,4 +36,13 @@ public class SlotLabels extends GridPanel {
     	newList.addAll(labelList);
         return newList;
     }
+    
+    public void setBackgroundColor(Color color, String address) {
+    	StringBuilder sb = new StringBuilder();
+    	sb.append(address);
+    	char ch = sb.charAt(0);
+    	int num = sb.charAt(1);
+    	labelList.get(ch*num);
+    }
+
 }

@@ -6,10 +6,12 @@ import model.Sheet;
 
 public class Controller extends Observable {
     private Sheet sheet;
+    private SheetPanel sheetPanel;
     private String current;
 
-    public Controller(Sheet sheet) {
+    public Controller(Sheet sheet, SheetPanel sheetPanel) {
     	this.sheet = sheet;
+    	this.sheetPanel = sheetPanel;
 		current = "A1";
     }
     
