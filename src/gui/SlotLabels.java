@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingConstants;
 
+import model.Sheet;
+
 public class SlotLabels extends GridPanel {
     private List<SlotLabel> labelList;
 
