@@ -17,7 +17,7 @@ public class XLBufferedReader extends BufferedReader {
                 String string = readLine();
                 int i = string.indexOf('=');
                 if (!string.subString(0,i).matches("[a-h][1-9][0]?")
-					throw new XLException("Not XL file")
+					throw new XLException("Not XL file");
 				else
 					map.put(string.subString(0,i),factory.buildSlot(string.subString(i+1)); 
             }
