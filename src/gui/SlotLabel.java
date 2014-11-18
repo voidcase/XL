@@ -21,8 +21,7 @@ public class SlotLabel extends ColoredLabel implements ActionListener, Observer 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
