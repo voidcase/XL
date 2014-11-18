@@ -4,6 +4,7 @@ import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.WEST;
 
 import java.util.List;
+import java.util.Observer;
 
 public class SheetPanel extends BorderPanel {
     private SlotLabels slots;
@@ -14,7 +15,7 @@ public class SheetPanel extends BorderPanel {
         add(CENTER, slots);
     }
 
-    public List listObservers() {
+    public List<Observer> listObservers() {
         return slots.listObservers();
     }
 }
