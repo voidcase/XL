@@ -13,6 +13,7 @@ import javax.swing.JFileChooser;
 import model.Sheet;
 import model.Slot;
 import model.XLBufferedReader;
+import model.XLException;
 
 class LoadMenuItem extends OpenMenuItem {
 	private Sheet sheet;
@@ -24,10 +25,14 @@ class LoadMenuItem extends OpenMenuItem {
 
 	protected void action(String path) throws FileNotFoundException {
 		// TODO
-		XLBufferedReader reader = new XLBufferedReader(path);
-
-		HashMap<String, Slot> map = new HashMap();
-		sheet = new Sheet(map);
+		try {
+			XLBufferedReader reader = new XLBufferedReader(path);
+			HashMap<String, Slot> map = new HashMap();
+			reader.load(map);
+			sheet = new Sheet(map);	
+		} catch (XLException e){
+			throw new XLException(e.getMessage());
+		}
 	}
 
 	protected int openDialog(JFileChooser fileChooser) {
