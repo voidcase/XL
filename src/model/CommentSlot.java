@@ -10,11 +10,15 @@ public class CommentSlot implements Slot{
 	}
 	
 	public String toString(){
-		return comment;
+		return '#' + comment;
 	}
 
 	@Override
 	public double value(Environment e) {
 		return 0;
+	}
+
+	public String display(Environment e) {
+		return comment;
 	}
 }
