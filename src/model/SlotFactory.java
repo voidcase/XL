@@ -17,7 +17,6 @@ public class SlotFactory {
 		sb.append(string);
 
 		if (sb.charAt(0) == '#') {
-			sb.deleteCharAt(0);
 			return new CommentSlot(sb.toString());
 		}
 		
