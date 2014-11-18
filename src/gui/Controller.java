@@ -18,6 +18,7 @@ public class Controller extends Observable {
      */
     public void setCurrent(String address) {
     	current = address;
+    	setChanged();
     	notifyObservers();
     }
 
@@ -41,6 +42,7 @@ public class Controller extends Observable {
      */
     public void update(String content) {
     	sheet.update(current, content);
+    	setChanged();
     	notifyObservers();
     }
 }

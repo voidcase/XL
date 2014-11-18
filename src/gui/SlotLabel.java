@@ -33,7 +33,8 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		
+		System.out.println("hello!");
+		controller.setCurrent("" + col + row);
 	}
 
 	@Override
@@ -50,8 +51,8 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("hello!");
+		controller.setCurrent("" + col + row);		
 	}
 
 	@Override
