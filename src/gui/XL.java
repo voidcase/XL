@@ -40,6 +40,7 @@ public class XL extends JFrame implements Printable {
 		controller = new Controller(sheet);
 		Editor editor = new Editor(controller);
 		controller.addObserver(statusLabel);
+		
 		JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
 		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
 	

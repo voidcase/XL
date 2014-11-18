@@ -11,11 +11,12 @@ import model.Sheet;
 public class StatusLabel extends ColoredLabel implements Observer {
 	
     public StatusLabel() {
-        super("hej", Color.WHITE);
+        super("", Color.WHITE);
     }
 
     public void update(Observable observable, Object object) {
-        setText("hejdå");
+        Controller controller = (Controller) observable;  
+    	setText(controller.toString());
+        setOpaque(true);
     }
-
 }
