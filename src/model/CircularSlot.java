@@ -13,4 +13,8 @@ public class CircularSlot implements Slot {
 	public String toString(){
 		return "CircularSlot";
 	}
+
+	public String display(Environment e) {
+		return "";
+	}
 }

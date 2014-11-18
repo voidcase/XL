@@ -16,10 +16,10 @@ public class XLBufferedReader extends BufferedReader {
             while (ready()) {
                 String string = readLine();
                 int i = string.indexOf('=');
-                if (!string.subString(0,i).matches("[a-h][1-9][0]?")
+                if (!string.substring(0,i).matches("[a-h][1-9][0]?"))
 					throw new XLException("Not XL file");
 				else
-					map.put(string.subString(0,i),factory.buildSlot(string.subString(i+1)); 
+					map.put(string.substring(0,i),factory.buildSlot(string.substring(i+1).toUpperCase())); 
             }
         } catch (Exception e) {
             throw new XLException(e.getMessage());

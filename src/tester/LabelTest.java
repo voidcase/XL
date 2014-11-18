@@ -25,13 +25,16 @@ public class LabelTest extends JFrame {
 		panel.add(label);
 		
 		add(CENTER, panel);
+
 //		panel.setOpaque(true);
 //		label.setOpaque(true);
 		pack();
+		
+		
 		label.setText("Hej");
         label.setOpaque(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setResizable(true);
+		setResizable(false);
 		setVisible(true);
 	}
 

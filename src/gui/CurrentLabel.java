@@ -11,7 +11,7 @@ public class CurrentLabel extends ColoredLabel implements Observer{
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
-		
+		if(arg0 instanceof Controller)
+			setText(((Controller)arg0).getCurrent());
 	}
 }
