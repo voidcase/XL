@@ -42,7 +42,7 @@ public class Sheet extends Observable implements Environment{
 	public void update(String address, String input) {
 		Slot oldSlot = slotMap.get(address);
 		try {
-			createSlot(address,"CircularSlot");
+			createSlot(address,"CircularSlot");	//Denna kommer att returnera false om oldSlot inte är null.	
 			Slot tempSlot = slotFactory.buildSlot(input);
 			double value = tempSlot.value(this);
 			createSlot(address, input);
@@ -60,4 +60,3 @@ public class Sheet extends Observable implements Environment{
 		return slotMap.keySet();
 	}
 }
-

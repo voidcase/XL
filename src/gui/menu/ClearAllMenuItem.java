@@ -2,6 +2,8 @@ package gui.menu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
+
 import javax.swing.JMenuItem;
 import model.Sheet;
 
@@ -16,6 +18,9 @@ class ClearAllMenuItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-    	//shit.removeAll();			--TODO väntar på att Love ska implementera i sheet. 
+    	Set<String> keys = shit.keySet();
+    	for(String key : keys){
+    		shit.remove(key);
+    	}
     }
 }
