@@ -3,6 +3,8 @@ package gui;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observer;
+
 import javax.swing.SwingConstants;
 
 import model.Sheet;
@@ -28,7 +30,9 @@ public class SlotLabels extends GridPanel {
         firstLabel.setBackground(Color.YELLOW);
     }
 
-    public List listObservers() {
-        return labelList;
+    public List<Observer> listObservers() {
+    	List<Observer> newList = new ArrayList<Observer>();
+    	newList.addAll(labelList);
+        return newList;
     }
 }

@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
+import java.util.Observer;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -44,7 +45,7 @@ public class XL extends JFrame implements Printable {
 		Editor editor = new Editor();
 		controller.addObserver(editor);
 		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, controller);
-		for(Observer o: sheetPanel.listObservrs())
+		for(Observer o: sheetPanel.listObservers())
 			sheet.addObserver(o);
 		// TODO: add observers to sheet
 		add(NORTH, statusPanel);
