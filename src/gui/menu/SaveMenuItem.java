@@ -25,13 +25,15 @@ class SaveMenuItem extends OpenMenuItem {
     protected void action(String path) throws FileNotFoundException {
         // TODO
     	try {
-			FileWriter fw = new FileWriter(new File(path));
+    		File target = new File(path);
+			FileWriter fw = new FileWriter(target);
 			Set<String> keys = shit.keySet();
-					for(String key : keys);
-			
+			target.delete();
+			for(String key : keys){
+				fw.write(key + "=" + shit.getSlotText(key) + "\n");
+			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new FileNotFoundException();
 		}
     }
 
