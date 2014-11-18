@@ -8,5 +8,4 @@ public class CircularSlot implements Slot {
 	public double value(Environment e) {
 		throw new XLException("Circular reference!");
 	}
-
 }

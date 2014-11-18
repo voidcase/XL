@@ -25,7 +25,6 @@ public class SlotFactory {
 			Expr expr = parser.build(string);
 			return new ExprSlot(expr);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			throw new XLException(e.getMessage());
 		}
 	}
