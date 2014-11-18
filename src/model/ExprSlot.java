@@ -18,4 +18,8 @@ public class ExprSlot implements Slot {
 		return ex.toString();
 	}
 
+	pubblic String display(Environment env) {
+		return Double.toString(value(env));
+	}
+
 }
