@@ -15,7 +15,7 @@ public class SheetPanel extends BorderPanel {
         add(CENTER, slots);
     }
 
-    public List<Observer> listObservers() {
+    public List<Observer> getListObservers() {
         return slots.listObservers();
     }
 }
