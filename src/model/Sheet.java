@@ -53,7 +53,7 @@ public class Sheet extends Observable implements Environment{
 		if (slotMap.containsKey(address)) {
 			Slot oldSlot = slotMap.get(address);
 			try {
-				if (input.equals("")){
+				if (input.equals("") || input.charAt(0) == '#'){
 					for(Entry<String, Slot> entry:slotMap.entrySet()){
 						String key = entry.getKey();
 						Slot loopSlot = entry.getValue();
