@@ -12,10 +12,8 @@ public class Editor extends JTextField implements Observer{
 	
 	Controller ctrl;
 	
-	public Editor(Controller c) {
+	public Editor() {
         setBackground(Color.WHITE);
-        ctrl = c;
-        ctrl.addObserver(this);
         addActionListener(new EditorListener());
     }
 	

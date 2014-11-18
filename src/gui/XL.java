@@ -18,8 +18,8 @@ import model.Sheet;
 public class XL extends JFrame implements Printable {
 	private static final int ROWS = 10, COLUMNS = 8;
 	private XLCounter counter;
-	private StatusLabel statusLabel = new StatusLabel();
-	private CurrentLabel currentLabel = new CurrentLabel();
+	private StatusLabel statusLabel;
+	private CurrentLabel currentLabel;
 	private XLList xlList;
 	private Sheet sheet;
 	private Controller controller;
@@ -31,18 +31,21 @@ public class XL extends JFrame implements Printable {
 	public XL(XLList xlList, XLCounter counter) {
 		super("Untitled-" + counter);
 		this.xlList = xlList;
-		this.counter = counter;
 		xlList.add(this);
+		this.counter = counter;
 		counter.increment();
 		sheet = new Sheet();
 		controller = new Controller(sheet);
-		Editor editor = new Editor(controller);
+		statusLabel = new StatusLabel();
 		controller.addObserver(statusLabel);
-		
+		currentLabel = new CurrentLabel();
+		controller.addObserver(currentLabel);
 		JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
-		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
-	
-
+		Editor editor = new Editor();
+		controller.addObserver(editor);
+		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, controller);
+		for(Observer o: sheetPanel.listObservrs())
+			sheet.addObserver(o);
 		// TODO: add observers to sheet
 		add(NORTH, statusPanel);
 		add(CENTER, editor);
