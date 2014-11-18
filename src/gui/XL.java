@@ -41,6 +41,7 @@ public class XL extends JFrame implements Printable {
         sheet = new Sheet();
         controller = new Controller(sheet);
         Editor editor = new Editor(controller);	
+        
 	//TODO: add observers to sheet
         add(NORTH, statusPanel);
         add(CENTER, editor);
