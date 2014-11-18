@@ -14,30 +14,30 @@ import javax.swing.JFileChooser;
 import model.Sheet;
 
 class SaveMenuItem extends OpenMenuItem {
-	
-	Sheet shit;
-	
-    public SaveMenuItem(XL xl, StatusLabel statusLabel, Sheet s) {
-        super(xl, statusLabel, "Save");
-        shit = s;
-    }
 
-    protected void action(String path) throws FileNotFoundException {
-        // TODO
-    	try {
-    		File target = new File(path);
+	private Sheet blad;
+
+	public SaveMenuItem(XL xl, StatusLabel statusLabel, Sheet s) {
+		super(xl, statusLabel, "Save");
+		blad = s;
+	}
+
+	protected void action(String path) throws FileNotFoundException {
+		// TODO
+		try {
+			File target = new File(path);
 			FileWriter fw = new FileWriter(target);
-			Set<String> keys = shit.keySet();
+			Set<String> keys = blad.keySet();
 			target.delete();
-			for(String key : keys){
-				fw.write(key + "=" + shit.getSlotText(key) + "\n");
+			for (String key : keys) {
+				fw.write(key + "=" + blad.getSlotText(key) + "\n");
 			}
 		} catch (IOException e) {
 			throw new FileNotFoundException();
 		}
-    }
+	}
 
-    protected int openDialog(JFileChooser fileChooser) {
-        return fileChooser.showSaveDialog(xl);
-    }
+	protected int openDialog(JFileChooser fileChooser) {
+		return fileChooser.showSaveDialog(xl);
+	}
 }
