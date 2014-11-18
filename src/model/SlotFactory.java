@@ -20,6 +20,10 @@ public class SlotFactory {
 			sb.deleteCharAt(0);
 			return new CommentSlot(sb.toString());
 		}
+		
+		if (sb.toString().equals("CircularSlot")){
+			return new CircularSlot();
+		}
 
 		try {
 			Expr expr = parser.build(string);

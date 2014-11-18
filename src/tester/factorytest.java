@@ -20,27 +20,36 @@ public class factorytest {
 
 		// ExprSlot
 		try {
-			Expr e1 = parser.build("4*5");
-			factory.buildSlot(e1.toString());
-			System.out.println(e1);
-		} catch (IOException e) {
-			throw new XLException(e.getMessage());
+			Expr expr1 = parser.build("4*5");
+			Slot s2 = factory.buildSlot(expr1.toString());
+			System.out.println(s2);
+		} catch (IOException e0) {
+			throw new XLException(e0.getMessage());
+		}
+		
+		//CircularSlot
+		
+		try {
+			Slot s3 = factory.buildSlot("CircularSlot");
+			System.out.println("success " + s3);
+		} catch (XLException xl0){
+			System.out.println("fail " + xl0);
 		}
 		
 		
 
 		// Weird
 		try {
-			Expr e2 = parser.build("hej");
-			factory.buildSlot(e2.toString());
-			System.out.println(e2);
+			Expr expr2 = parser.build("hej");
+			factory.buildSlot(expr2.toString());
+			System.out.println(expr2);
 		} 
-			catch (IOException e) {
-			System.out.println("IO " + e.getMessage());
+			catch (IOException e2) {
+			System.out.println("IO " + e2.getMessage());
 //			throw new XLException(e.getMessage());
 		} 
-		catch (XLException e2){
-			System.out.println("XL " + e2.getMessage());
+		catch (XLException xl1){
+			System.out.println("XL " + xl1.getMessage());
 		}
 		
 	}
