@@ -10,7 +10,6 @@ public class XLBufferedReader extends BufferedReader {
         super(new FileReader(name));
     }
 
-    // TODO Change Object to something appropriate
     public void load(Map<String, Slot> map) {
 		SlotFactory factory = new SlotFactory();
         try {
