@@ -27,9 +27,9 @@ public class Sheet extends Observable implements Environment{
 		return tempSlot.value(this);
 	}
 
-	public void createSlot(String text){
+	public void createSlot(String address, String text){
 		Slot newSlot = slotFactory.buildSlot(text);
-		
+		slotMap.put(address, newSlot);
 	}
 	
 	public String getSlotText(String address){
@@ -39,8 +39,16 @@ public class Sheet extends Observable implements Environment{
 		return slotMap.get(address).toString();
 	}
 	
-	public void update(String address, Object somethingFixLater) {
-		
+	public void update(String address, String input) {
+		try {
+			Slot oldSlot = slotMap.get(address);
+			createSlot(address,"CircularSlot");
+			Slot tempSlot = slotFactory.buildSlot(input);
+			double value = tempSlot.value(this);
+			createSlot(address, input);
+		} catch (XLException e) {
+			throw new XLException(e.getMessage());
+		}
 	}
 	
 	public void remove(String address) {
