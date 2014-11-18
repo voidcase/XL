@@ -10,7 +10,6 @@ import expr.Environment;
 public class Sheet extends Observable implements Environment{
 
 	private SlotFactory slotFactory;
-	private String currentSlot;
 	private Map<String, Slot> slotMap;
 	private String status;
 	
@@ -29,14 +28,6 @@ public class Sheet extends Observable implements Environment{
 		return 0;
 	}
 
-	public String getCurrent() {
-		return currentSlot;	
-	}
-	
-	public void setCurrent(String address){
-		currentSlot = address;
-	}
-	
 	public void createSlot(String text){
 		
 	}
@@ -56,4 +47,11 @@ public class Sheet extends Observable implements Environment{
 	public String getString(String address) {
 		return "";
 	}
+		//TODO
 }
+	/*Isaks önskelista
+	 * Kära tomten, denna julen önskar jag mig:
+	 * remove(String address)
+	 * keySet från hashmappen.
+	 * god jul.*/
+

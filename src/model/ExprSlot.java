@@ -10,7 +10,7 @@ public class ExprSlot implements Slot {
 		ex = expr;
 	}
 
-	public double value(Environment env) { // TODO Osäker här.
+	public double value(Environment env) {
 		return ex.value(env);
 	}
 
