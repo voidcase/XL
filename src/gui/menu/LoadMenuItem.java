@@ -5,9 +5,11 @@ import gui.XL;
 import java.io.FileNotFoundException;
 import javax.swing.JFileChooser;
 
+import model.Sheet;
+
 class LoadMenuItem extends OpenMenuItem {
  
-    public LoadMenuItem(XL xl, StatusLabel statusLabel) {
+    public LoadMenuItem(XL xl, StatusLabel statusLabel, Sheet shit) {
         super(xl, statusLabel, "Load");
     }
 
