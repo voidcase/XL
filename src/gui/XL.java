@@ -44,8 +44,8 @@ public class XL extends JFrame implements Printable {
 		JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
 		Editor editor = new Editor();
 		controller.addObserver(editor);
-		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, controller);
-		for(Observer o: sheetPanel.listObservers())
+		SheetPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, controller);
+		for(Observer o: sheetPanel.getListObservers())
 			sheet.addObserver(o);
 		// TODO: add observers to sheet
 		add(NORTH, statusPanel);
