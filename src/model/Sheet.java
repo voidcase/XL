@@ -17,6 +17,13 @@ public class Sheet extends Observable implements Environment{
 		slotMap = new HashMap<String, Slot>();
 	}
 	
+	public Sheet(HashMap<String, Slot> hashMap) {
+		slotFactory = new SlotFactory();
+		slotMap.putAll(hashMap);
+		
+		
+	}
+	
 	public String getStatus() {
 		return status;
 	}
@@ -28,6 +35,9 @@ public class Sheet extends Observable implements Environment{
 	}
 
 	public void createSlot(String address, String text){
+		if (slotMap.containsKey(address)){
+			slotMap.remove(address);
+		}
 		Slot newSlot = slotFactory.buildSlot(text);
 		slotMap.put(address, newSlot);
 	}
@@ -40,15 +50,18 @@ public class Sheet extends Observable implements Environment{
 	}
 	
 	public void update(String address, String input) {
-		Slot oldSlot = slotMap.get(address);
-		try {
-			createSlot(address,"CircularSlot");	//Denna kommer att returnera false om oldSlot inte är null.	--Ic
-			Slot tempSlot = slotFactory.buildSlot(input);
-			double value = tempSlot.value(this);
-			createSlot(address, input);
-		} catch (XLException e) {
-			createSlot(address, oldSlot.toString());
-			throw new XLException(e.getMessage());
+
+		if (slotMap.containsKey(address)) {
+			Slot oldSlot = slotMap.get(address);
+			try {
+				createSlot(address,"CircularSlot");	
+				Slot tempSlot = slotFactory.buildSlot(input);
+				double value = tempSlot.value(this);
+				createSlot(address, input);
+			} catch (XLException e) {
+				createSlot(address, oldSlot.toString());
+				throw new XLException(e.getMessage());
+			}
 		}
 	}
 	

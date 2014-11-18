@@ -34,11 +34,14 @@ public class XL extends JFrame implements Printable {
 		this.counter = counter;
 		xlList.add(this);
 		counter.increment();
-		JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
-		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
 		sheet = new Sheet();
 		controller = new Controller(sheet);
 		Editor editor = new Editor(controller);
+		controller.addObserver(statusLabel);
+		
+		JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
+		JPanel sheetPanel = new SheetPanel(ROWS, COLUMNS);
+	
 
 		// TODO: add observers to sheet
 		add(NORTH, statusPanel);
