@@ -10,7 +10,7 @@ import java.util.Observer;
 
 import model.Sheet;
 
-public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
+public class SlotLabel extends ColoredLabel implements Observer, MouseListener{
 	private char col;
 	private int row;
 	private Sheet sheet;
@@ -21,6 +21,7 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
        this.col = col; 
        this.row = row;
        this.controller = controller;
+       addMouseListener(this);
        
     }
 
@@ -33,31 +34,22 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		System.out.println("hello!");
 		controller.setCurrent("" + col + row);
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		System.out.println("hello!");
-		controller.setCurrent("" + col + row);		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 }
