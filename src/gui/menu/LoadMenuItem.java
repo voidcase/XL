@@ -15,7 +15,7 @@ import model.Slot;
 import model.XLBufferedReader;
 import model.XLException;
 import java.io.File;
-
+//FIXME: exceptions when loading.
 class LoadMenuItem extends OpenMenuItem {
 	private Sheet sheet;
 

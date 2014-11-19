@@ -10,11 +10,11 @@ public class XLPrintStream extends PrintStream {
         super(fileName);
     }
 
-    public void save(Set<Entry<String, Slot>> set) {
-        for (Entry<String, Slot> entry : set) {
-            print(entry.getKey());
+    public void save(Set<String> keys, Sheet sheet) {
+        for (String key : keys) {
+            print(key);
             print('=');
-            println(entry.getValue());
+            println(sheet.getSlotText(key));
         }
         flush();
         close();

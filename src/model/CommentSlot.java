@@ -1,7 +1,7 @@
 package model;
 
 import expr.Environment;
-
+//FIXME kommentarer skrivs ut som 0, inte sin string.
 public class CommentSlot implements Slot{
 	String comment;
 	

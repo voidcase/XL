@@ -13,10 +13,11 @@ public class SlotFactory {
 	}
 
 	public Slot buildSlot(String string) {
+
 		StringBuilder sb = new StringBuilder();
 		sb.append(string);
-
 		try {
+
 			if (sb.charAt(0) == '#') {
 				return new CommentSlot(sb.toString());
 			}
