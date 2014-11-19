@@ -31,7 +31,7 @@ public class Editor extends JTextField implements Observer {
 			try {
 				controller.update(getText());
 			} catch (XLException e) {
-				System.out.println("editor : " + e.getMessage());
+			
 			}
 		}
 	}
