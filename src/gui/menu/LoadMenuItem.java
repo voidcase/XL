@@ -15,7 +15,7 @@ import model.Slot;
 import model.XLBufferedReader;
 import model.XLException;
 import java.io.File;
-//FIXME: exceptions when loading.
+//FIXME: loaded sheet not visible.
 class LoadMenuItem extends OpenMenuItem {
 	private Sheet sheet;
 
@@ -30,7 +30,7 @@ class LoadMenuItem extends OpenMenuItem {
 			HashMap<String, Slot> map = new HashMap<String, Slot>();
 			reader.load(map);
 			sheet = new Sheet(map);
-			sheet.update("A1", sheet.getSlotText("A1"));//TODO snygga till om möjligt.
+			//sheet.update("A1", sheet.getSlotText("A1"));//TODO snygga till om möjligt.
 		} catch (XLException e){
 			throw new XLException(e.getMessage());
 		}
