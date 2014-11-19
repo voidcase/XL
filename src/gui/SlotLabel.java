@@ -10,24 +10,28 @@ import java.util.Observer;
 
 import model.Sheet;
 
-public class SlotLabel extends ColoredLabel implements Observer, MouseListener{
+public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 	private char col;
 	private int row;
 	private Sheet sheet;
 	private Controller controller;
-	
-    public SlotLabel(char col, int row, Controller controller) {
-        super("                    ", Color.WHITE, RIGHT);
-       this.col = col; 
-       this.row = row;
-       this.controller = controller;
-       addMouseListener(this);
-       
-    }
+
+	public SlotLabel(char col, int row, Controller controller) {
+		super("                    ", Color.WHITE, RIGHT);
+		this.col = col;
+		this.row = row;
+		this.controller = controller;
+		addMouseListener(this);
+
+	}
+
+	public String address() {
+		return ("" + col + row);
+	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		if (arg0 instanceof Sheet){
+		if (arg0 instanceof Sheet) {
 			sheet = (Sheet) arg0;
 			String string = sheet.getSlotText("" + col + row);
 			this.setText(string);
@@ -38,6 +42,7 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
+		System.out.println("slotlabel");
 		controller.setCurrent("" + col + row);
 	}
 
