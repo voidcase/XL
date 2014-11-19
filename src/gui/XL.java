@@ -37,6 +37,8 @@ public class XL extends JFrame implements Printable {
 		counter.increment();
 		sheet = new Sheet();
 		controller = new Controller(sheet);
+		SheetPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, controller);
+		
 		statusLabel = new StatusLabel();
 		controller.addObserver(statusLabel);
 		currentLabel = new CurrentLabel();
@@ -44,7 +46,8 @@ public class XL extends JFrame implements Printable {
 		JPanel statusPanel = new StatusPanel(statusLabel, currentLabel);
 		Editor editor = new Editor(controller);
 		controller.addObserver(editor);
-		SheetPanel sheetPanel = new SheetPanel(ROWS, COLUMNS, controller);
+
+	
 		controller.addObserver(sheetPanel);
 		for(Observer o: sheetPanel.getListObservers()) {
 			sheet.addObserver(o);

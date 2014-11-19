@@ -30,7 +30,11 @@ public class SlotLabels extends GridPanel {
         }
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
+
         coloredLabel = firstLabel.address();
+
+        labelList.get(21).setBackground(Color.CYAN);
+
     }
 
     public List<Observer> listObservers() {
@@ -82,5 +86,4 @@ public class SlotLabels extends GridPanel {
     	System.out.println("labels");
     	return coloredLabel;
     }
-    
 }
