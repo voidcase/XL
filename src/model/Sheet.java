@@ -49,33 +49,42 @@ public class Sheet extends Observable implements Environment{
 	}
 
 	public void update(String address, String input) {
-		Slot oldSlot = slotMap.get(address);
-		try {
-			if (input.equals("") || input.charAt(0) == '#'){
-				for(Entry<String, Slot> entry:slotMap.entrySet()){
-					String key = entry.getKey();
-					Slot loopSlot = entry.getValue();
-					oldSlot = slotMap.get(key);
-					CircularSlot circSlot = new CircularSlot();
-					slotMap.remove(key);
-					slotMap.put(key, circSlot);
-					Slot tempSlot = slotFactory.buildSlot(loopSlot.toString());
-					tempSlot.value(this);
-					createSlot(key, loopSlot.toString());
-				}
-			} else {
-				CircularSlot circSlot = new CircularSlot();
-				slotMap.put(address, circSlot);
-				Slot tempSlot = slotFactory.buildSlot(input);
-				tempSlot.value(this);
-				createSlot(address, input);
+		if (slotMap.isEmpty()){
+			try {
+				createSlot(address,input);
+			} catch(XLException e) {
+				throw new XLException(e.getMessage());
+
 			}
-		} catch (XLException e) {
-			createSlot(address, oldSlot.toString());
-			throw new XLException(e.getMessage());
+		} else {
+			Slot oldSlot = slotMap.get(address);
+			try {
+				if (input.equals("") || input.charAt(0) == '#'){
+					for(Entry<String, Slot> entry:slotMap.entrySet()){
+						String key = entry.getKey();
+						Slot loopSlot = entry.getValue();
+						oldSlot = slotMap.get(key);
+						CircularSlot circSlot = new CircularSlot();
+						slotMap.remove(key);
+						slotMap.put(key, circSlot);
+						Slot tempSlot = slotFactory.buildSlot(loopSlot.toString());
+						tempSlot.value(this);
+						createSlot(key, loopSlot.toString());
+					}
+				} else {
+					CircularSlot circSlot = new CircularSlot();
+					slotMap.put(address, circSlot);
+					Slot tempSlot = slotFactory.buildSlot(input);
+					tempSlot.value(this);
+					createSlot(address, input);
+				}
+			} catch (XLException e) {
+				createSlot(address, oldSlot.toString());
+				throw new XLException(e.getMessage());
+			}
+			setChanged();
+			notifyObservers();
 		}
-		setChanged();
-		notifyObservers();
 	}
 	
 	public void remove(String address) {
