@@ -1,10 +1,13 @@
 package model;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Observable;
 import java.util.Set;
+
+
 import expr.Environment;
 
 public class Sheet extends Observable implements Environment {
@@ -66,7 +69,6 @@ public class Sheet extends Observable implements Environment {
 	}
 
 	public void update(String address, String input) {
-
 		if (slotMap.isEmpty()) {
 			try {
 				createSlot(address, input);
@@ -77,30 +79,23 @@ public class Sheet extends Observable implements Environment {
 			Slot oldSlot = slotMap.get(address);
 			try {
 				if (input.equals("")) {
-					System.out.println("sheet: input == '' ");
-					if (slotMap.containsKey(address)) {
-						for (Entry<String, Slot> entry : slotMap.entrySet()) {
-							String key = entry.getKey();
-							Slot loopSlot = entry.getValue();
-							CircularSlot circSlot = new CircularSlot();
-							slotMap.remove(key);
-							slotMap.put(key, circSlot);
-							loopSlot.value(this);
-							slotMap.remove(key);
-							slotMap.put(key,loopSlot);
+					try{
+						if (slotMap.containsKey(address)) {
+							for (Entry<String, Slot> entry : slotMap.entrySet()) {
+								String key = entry.getKey();
+								//FIXME Lös problemet med dependencies när vi tar bort en cell
+							}
+							slotMap.remove(address);
 						}
-						slotMap.remove(address);
+						
+					} catch (XLException e) {
+						throw new XLException(e.getMessage());
 					}
 				} else {
-					System.out.println("Sheet: else");
-					CircularSlot circSlot = new CircularSlot();
-					slotMap.put(address, circSlot);
-					System.out.println("Sheet: so far");
-
 					try {
+						CircularSlot circSlot = new CircularSlot();
+						slotMap.put(address, circSlot);
 						Slot tempSlot = slotFactory.buildSlot(input);
-						System.out.println("Sheet: progress, "
-								+ tempSlot.toString());
 						tempSlot.value(this);
 						createSlot(address, input);
 					} catch (XLException e) {
@@ -132,11 +127,12 @@ public class Sheet extends Observable implements Environment {
 	}
 	
 	private void clearCircularSlots() {
-		for (Entry<String, Slot> entry : slotMap.entrySet()) {
-			String key = entry.getKey();
-			Slot loopSlot = entry.getValue();
+		Iterator it = slotMap.entrySet().iterator();
+		while(it.hasNext()) {
+			Map.Entry<String,Slot> pairs =  (Entry<String, Slot>) it.next();
+			Slot loopSlot = pairs.getValue();
 			if (loopSlot instanceof CircularSlot) {
-				slotMap.remove(key);
+				it.remove();
 			}
 		}
 
