@@ -77,20 +77,19 @@ public class Sheet extends Observable implements Environment {
 			Slot oldSlot = slotMap.get(address);
 			try {
 				if (input.equals("")) {
-
 					System.out.println("sheet: input == '' ");
-
-					for (Entry<String, Slot> entry : slotMap.entrySet()) {
-						String key = entry.getKey();
-						Slot loopSlot = entry.getValue();
-						oldSlot = slotMap.get(key);
-						CircularSlot circSlot = new CircularSlot();
-						slotMap.remove(key);
-						slotMap.put(key, circSlot);
-						Slot tempSlot = slotFactory.buildSlot(loopSlot
-								.toString());
-						tempSlot.value(this);
-						createSlot(key, loopSlot.toString());
+					if (slotMap.containsKey(address)) {
+						for (Entry<String, Slot> entry : slotMap.entrySet()) {
+							String key = entry.getKey();
+							Slot loopSlot = entry.getValue();
+							CircularSlot circSlot = new CircularSlot();
+							slotMap.remove(key);
+							slotMap.put(key, circSlot);
+							loopSlot.value(this);
+							slotMap.remove(key);
+							slotMap.put(key,loopSlot);
+						}
+						slotMap.remove(address);
 					}
 				} else {
 					System.out.println("Sheet: else");
@@ -108,10 +107,13 @@ public class Sheet extends Observable implements Environment {
 						throw new NullPointerException(e.getMessage());
 					}
 				}
-			} catch (NullPointerException e) {
+			} 
+			catch (NullPointerException e) {
 				clearCircularSlots();
 				throw new XLException(e.getMessage());
-			} catch (XLException e) {
+			} 
+			catch (XLException e) {
+				clearCircularSlots();
 				System.out.println("Sheet: exception");
 				createSlot(address, oldSlot.toString());
 				throw new XLException(e.getMessage());
