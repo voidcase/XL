@@ -81,14 +81,15 @@ public class Sheet extends Observable implements Environment {
 				if (input.equals("")) {
 					try{
 						if (slotMap.containsKey(address)) {
-							for (Entry<String, Slot> entry : slotMap.entrySet()) {
-								String key = entry.getKey();
-								//FIXME Lös problemet med dependencies när vi tar bort en cell
-							}
 							slotMap.remove(address);
+							for(Entry<String, Slot> entry: slotMap.entrySet()) {
+								Slot slot = entry.getValue();
+								slot.value(this);
+							}
 						}
 						
 					} catch (XLException e) {
+						slotMap.put(address, oldSlot);
 						throw new XLException(e.getMessage());
 					}
 				} else {
