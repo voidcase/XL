@@ -8,9 +8,11 @@ import java.util.Observer;
 
 import javax.swing.JTextField;
 
+import model.XLException;
+
 public class Editor extends JTextField implements Observer{
 	
-	Controller ctrl;
+	private Controller ctrl;
 	
 	public Editor(Controller c) {
         setBackground(Color.WHITE);
@@ -26,7 +28,12 @@ public class Editor extends JTextField implements Observer{
 	private class EditorListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
+			try {
 			ctrl.update(getText());
+			} catch (XLException e){
+				System.out.println("editor : " + e.getMessage());
+				throw new XLException(e.getMessage());
+			}
 		}
 		
 	}
