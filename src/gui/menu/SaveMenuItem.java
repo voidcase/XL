@@ -13,7 +13,7 @@ import javax.swing.JFileChooser;
 
 import model.Sheet;
 import model.XLPrintStream;
-
+//FIXME Sparning skapar ingen fil men huttar inte exceptions heller.
 class SaveMenuItem extends OpenMenuItem {
 
 	private Sheet blad;
