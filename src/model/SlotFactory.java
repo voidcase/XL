@@ -13,35 +13,28 @@ public class SlotFactory {
 	}
 
 	public Slot buildSlot(String string) {
-		System.out.println("factory : rätt 1");
-
 		StringBuilder sb = new StringBuilder();
 		sb.append(string);
 
-		if (sb.charAt(0) == '#') {
-
-			System.out.println("factory : fel");
-
-			return new CommentSlot(sb.toString());
-		}
-
 		try {
-			System.out.println("factory : rätt 2 " + string);
+			if (sb.charAt(0) == '#') {
+				return new CommentSlot(sb.toString());
+			}
 
-			Expr expr = parser.build(string);
-			return new ExprSlot(expr);
+			try {
+				Expr expr = parser.build(string);
+				return new ExprSlot(expr);
 
-		} catch (XLException e) {
+			} catch (XLException e) {
+				throw new XLException(" '" + string + "'"
+						+ " is not an expression");
+			} catch (IOException e) {
+				throw new XLException(" '" + string + "'"
+						+ " is not an expression");
+			}
 
-			System.out.println("factory 1: " + e.getMessage());
-
-			throw new XLException(" '" + string + "'" + " is not an expression");
-		} catch (IOException e) {
-
-			System.out.println("factory 2: " + e.getMessage());
-
-			throw new XLException(string + " is not an expression");
+		} catch (StringIndexOutOfBoundsException e2) {
+			throw new XLException("");
 		}
-
 	}
 }

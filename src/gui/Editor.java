@@ -10,27 +10,27 @@ import javax.swing.JTextField;
 
 import model.XLException;
 
-public class Editor extends JTextField implements Observer{
-	
+public class Editor extends JTextField implements Observer {
+
 	private Controller controller;
-	
+
 	public Editor(Controller c) {
-        setBackground(Color.WHITE);
-        addActionListener(new EditorListener());
-        controller = c;
-    }
-	
+		setBackground(Color.WHITE);
+		addActionListener(new EditorListener());
+		controller = c;
+	}
+
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		setText(controller.currentString());
 	}
-	
-	private class EditorListener implements ActionListener{
+
+	private class EditorListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			try {
-			controller.update(getText());
-			} catch (XLException e){
+				controller.update(getText());
+			} catch (XLException e) {
 				System.out.println("editor : " + e.getMessage());
 			}
 		}
