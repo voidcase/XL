@@ -16,7 +16,6 @@ public class StatusLabel extends ColoredLabel implements Observer {
 
     public void update(Observable observable, Object object) {
         Controller controller = (Controller) observable;  
-        try 
     	setText(controller.currentString());
         setOpaque(true);
     }
