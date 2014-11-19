@@ -40,7 +40,7 @@ public class Controller extends Observable {
     /**
      * Enter content into current slot
      */
-    public void update(String content) {
+    public void update(String content) {	/*[NOT-AN-OBSERVER]*/
     	sheet.update(current, content);
     	setChanged();
     	notifyObservers();
