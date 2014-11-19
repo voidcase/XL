@@ -30,7 +30,7 @@ public class XL extends JFrame implements Printable {
 	}
 
 	public XL(XLList xlList, XLCounter counter) {
-		super("Untitled-" + counter);
+		super("XL - " + counter);
 		this.xlList = xlList;
 		xlList.add(this);
 		this.counter = counter;
