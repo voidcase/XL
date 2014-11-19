@@ -49,7 +49,6 @@ public class Sheet extends Observable implements Environment{
 	}
 
 	public void update(String address, String input) {
-
 		if (slotMap.containsKey(address)) {
 			Slot oldSlot = slotMap.get(address);
 			try {

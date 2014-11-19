@@ -22,7 +22,6 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 		this.row = row;
 		this.controller = controller;
 		addMouseListener(this);
-
 	}
 
 	public String address() {
@@ -31,16 +30,9 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-	
-		//TODO FIX BACKGROUND OF CURRENT, KANSKE INTE H€R
-		if (arg0 instanceof Sheet){
-
-			sheet = (Sheet) arg0;
-			String string = sheet.getSlotText("" + col + row);
-			this.setText(string);
-		} else {
-			setBackground(Color.YELLOW);
-		}
+		sheet = (Sheet) arg0;
+		String string = sheet.getSlotText("" + col + row);
+		this.setText(string);
 	}
 
 	@Override
