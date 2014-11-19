@@ -45,7 +45,7 @@ public class Sheet extends Observable implements Environment {
 		if (!slotMap.containsKey(name)) {
 			return "";
 		}
-		return String.valueOf(slotMap.get(name).value(this));
+		return slotMap.get(name).display(this);
 	}
 
 	public void createSlot(String address, String text) {
