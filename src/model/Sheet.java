@@ -64,14 +64,12 @@ public class Sheet extends Observable implements Environment{
 					createSlot(key, loopSlot.toString());
 				}
 			} else {
-
 				CircularSlot circSlot = new CircularSlot();
 				slotMap.put(address, circSlot);
 				Slot tempSlot = slotFactory.buildSlot(input);
 				tempSlot.value(this);
 				createSlot(address, input);
 			}
-
 		} catch (XLException e) {
 			createSlot(address, oldSlot.toString());
 			throw new XLException(e.getMessage());
