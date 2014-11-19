@@ -38,8 +38,6 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		System.out.println("slotlabel");
-		System.out.println("label " + "" + col + row);
 		String address = ("" + col + row);
 		controller.setCurrent(address);
 	}

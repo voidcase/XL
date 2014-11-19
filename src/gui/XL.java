@@ -30,7 +30,7 @@ public class XL extends JFrame implements Printable {
 	}
 
 	public XL(XLList xlList, XLCounter counter) {
-		super("Untitled-" + counter);
+		super("XL - " + counter);
 		this.xlList = xlList;
 		xlList.add(this);
 		this.counter = counter;
@@ -52,7 +52,6 @@ public class XL extends JFrame implements Printable {
 		for(Observer o: sheetPanel.getListObservers()) {
 			sheet.addObserver(o);
 		}
-		System.out.println(controller.getCurrent());
 		add(NORTH, statusPanel);
 		add(CENTER, editor);
 		add(SOUTH, sheetPanel);

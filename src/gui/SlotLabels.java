@@ -30,7 +30,6 @@ public class SlotLabels extends GridPanel {
         }
         SlotLabel firstLabel = labelList.get(0);
         firstLabel.setBackground(Color.YELLOW);
-
         coloredLabel = firstLabel.address();
     }
 
@@ -44,12 +43,7 @@ public class SlotLabels extends GridPanel {
  
     	char ch = address.charAt(0);
     	int num = Integer.parseInt(address.charAt(1) + "");
-//    	char ch = address.charAt(0);
-//    	int num = address.charAt(1);
 
-    	
-    	System.out.println("char " + ch);
-    	System.out.println("num " + num);
     	if (ch == 'A') {
     		int newNum = 0 + (num - 1) * 8;
     		labelList.get(newNum).setBackground(color);
@@ -80,7 +74,6 @@ public class SlotLabels extends GridPanel {
     }
     
     public String coloredLabel(){
-    	System.out.println("labels");
     	return coloredLabel;
     }
 }
