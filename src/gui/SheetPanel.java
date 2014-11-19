@@ -16,6 +16,7 @@ public class SheetPanel extends BorderPanel implements Observer {
         add(WEST, new RowLabels(rows));
         slots = new SlotLabels(rows, columns, controller);
         add(CENTER, slots);
+        this.controller = controller;
     }
 
     public List<Observer> getListObservers() {
@@ -28,14 +29,11 @@ public class SheetPanel extends BorderPanel implements Observer {
 		
 		System.out.println("sheetpanel " + coloredLabel);
 
-//		String current = controller.getCurrent();
-//		if(!(current.equals(coloredLabel))){
+		String current = controller.getCurrent();
+		if(!(current.equals(coloredLabel))){
 			slots.setBackgroundColor(Color.WHITE, coloredLabel);
-//			slots.setBackgroundColor(Color.YELLOW, current);
-//			coloredLabel = current;			
-//		}
-		// TODO Auto-generated method stub
-		
-		
+			slots.setBackgroundColor(Color.YELLOW, current);
+			coloredLabel = current;			
+		}		
 	}
 }

@@ -21,7 +21,7 @@ public class Controller extends Observable {
     	setChanged();
     	notifyObservers();
     }
-
+    
     /**
      * Returns current slot address
      */
