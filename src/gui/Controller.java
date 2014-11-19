@@ -43,7 +43,7 @@ public class Controller extends Observable {
      */
     public void update(String content) {	/*[NOT-AN-OBSERVER]*/
     	try {
-    	sheet.update(current, content);
+    		sheet.update(current, content);
     	} catch (XLException e){
     		System.out.println("controller : " + e.getMessage());
     		throw new XLException(e.getMessage());
