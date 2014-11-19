@@ -35,7 +35,7 @@ public class Sheet extends Observable implements Environment {
 		} catch (NullPointerException e) {
 			throw new XLException(
 					"One or more cells that you tried to use in your expression are blank");
-		} 
+		}
 	}
 
 	public String valueText(String name) {
@@ -66,10 +66,7 @@ public class Sheet extends Observable implements Environment {
 	}
 
 	public void update(String address, String input) {
-		if (input == null){
-			System.out.println("Sheet: input är null");
-		}
-		
+
 		if (slotMap.isEmpty()) {
 			try {
 				createSlot(address, input);
@@ -80,6 +77,9 @@ public class Sheet extends Observable implements Environment {
 			Slot oldSlot = slotMap.get(address);
 			try {
 				if (input.equals("")) {
+
+					System.out.println("sheet: input == '' ");
+
 					for (Entry<String, Slot> entry : slotMap.entrySet()) {
 						String key = entry.getKey();
 						Slot loopSlot = entry.getValue();
@@ -93,16 +93,29 @@ public class Sheet extends Observable implements Environment {
 						createSlot(key, loopSlot.toString());
 					}
 				} else {
+					System.out.println("Sheet: else");
 					CircularSlot circSlot = new CircularSlot();
 					slotMap.put(address, circSlot);
-					Slot tempSlot = slotFactory.buildSlot(input);
-					tempSlot.value(this);
-					createSlot(address, input);
+					System.out.println("Sheet: so far");
+
+					try {
+						Slot tempSlot = slotFactory.buildSlot(input);
+						System.out.println("Sheet: progress, "
+								+ tempSlot.toString());
+						tempSlot.value(this);
+						createSlot(address, input);
+					} catch (XLException e) {
+						throw new NullPointerException(e.getMessage());
+					}
 				}
+			} catch (NullPointerException e) {
+				throw new XLException(e.getMessage());
 			} catch (XLException e) {
+				System.out.println("Sheet: exception");
 				createSlot(address, oldSlot.toString());
 				throw new XLException(e.getMessage());
 			}
+
 			setChanged();
 			notifyObservers();
 		}
