@@ -28,7 +28,7 @@ class SaveMenuItem extends OpenMenuItem {
 		XLPrintStream stream = new XLPrintStream(path);
 		target.delete();
 		Set<String> keys = blad.keySet();
-		stream.save(keys, blad);	
+		stream.save(keys, blad);
 	}
 
 	protected int openDialog(JFileChooser fileChooser) {
