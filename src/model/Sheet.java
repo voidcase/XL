@@ -24,6 +24,17 @@ public class Sheet extends Observable implements Environment {
 	public Sheet(HashMap<String, Slot> hashMap) {
 		this();
 		slotMap.putAll(hashMap);
+		
+		setChanged();
+		notifyObservers();
+	}
+	
+	public void changeMap(HashMap<String,Slot> map){
+		slotMap.clear();
+		slotMap.putAll(map);
+		
+		setChanged();
+		notifyObservers();
 	}
 
 	public String getStatus() {
@@ -83,7 +94,7 @@ public class Sheet extends Observable implements Environment {
 						if (slotMap.containsKey(address)) {
 							for (Entry<String, Slot> entry : slotMap.entrySet()) {
 								String key = entry.getKey();
-								//FIXME Lšs problemet med dependencies nŠr vi tar bort en cell
+								//FIXME Lï¿½s problemet med dependencies nï¿½r vi tar bort en cell
 							}
 							slotMap.remove(address);
 						}

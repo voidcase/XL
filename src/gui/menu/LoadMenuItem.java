@@ -37,8 +37,9 @@ class LoadMenuItem extends OpenMenuItem {
 			for(Slot i : map.values()){
 				System.out.print(i.toString() + " ");
 			}
+			System.out.println("***********************************************************************");
 			//</DEBUG>
-			sheet = new Sheet(map);
+			sheet.changeMap(map);
 			//sheet.update("A1", sheet.getSlotText("A1"));//TODO snygga till om möjligt.
 		} catch (XLException e){
 			throw new XLException(e.getMessage());
