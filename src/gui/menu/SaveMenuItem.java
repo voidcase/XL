@@ -13,7 +13,7 @@ import javax.swing.JFileChooser;
 
 import model.Sheet;
 import model.XLPrintStream;
-//FIXME Sparning skapar ingen fil men huttar inte exceptions heller.
+
 class SaveMenuItem extends OpenMenuItem {
 
 	private Sheet blad;
@@ -24,9 +24,7 @@ class SaveMenuItem extends OpenMenuItem {
 	}
 
 	protected void action(String path) throws FileNotFoundException {
-		File target = new File(path);
 		XLPrintStream stream = new XLPrintStream(path);
-		target.delete();
 		Set<String> keys = blad.keySet();
 		stream.save(keys, blad);
 	}

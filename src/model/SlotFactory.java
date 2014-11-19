@@ -33,7 +33,6 @@ public class SlotFactory {
 				throw new XLException(" '" + string + "'"
 						+ " is not an expression");
 			}
-
 		} catch (Exception e2) {
 			throw new XLException("");
 		}
