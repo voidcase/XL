@@ -29,7 +29,8 @@ class LoadMenuItem extends OpenMenuItem {
 			XLBufferedReader reader = new XLBufferedReader(path);
 			HashMap<String, Slot> map = new HashMap<String, Slot>();
 			reader.load(map);
-			sheet = new Sheet(map);	
+			sheet = new Sheet(map);
+			sheet.update("A1", sheet.getSlotText("A1"));//TODO snygga till om möjligt.
 		} catch (XLException e){
 			throw new XLException(e.getMessage());
 		}

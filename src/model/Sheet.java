@@ -19,7 +19,7 @@ public class Sheet extends Observable implements Environment {
 	}
 
 	public Sheet(HashMap<String, Slot> hashMap) {
-		slotFactory = new SlotFactory();
+		this();
 		slotMap.putAll(hashMap);
 	}
 
