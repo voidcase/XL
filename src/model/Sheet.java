@@ -66,6 +66,10 @@ public class Sheet extends Observable implements Environment {
 	}
 
 	public void update(String address, String input) {
+		if (input == null){
+			System.out.println("Sheet: input är null");
+		}
+		
 		if (slotMap.isEmpty()) {
 			try {
 				createSlot(address, input);

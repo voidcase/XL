@@ -33,7 +33,7 @@ public class SlotFactory {
 						+ " is not an expression");
 			}
 
-		} catch (StringIndexOutOfBoundsException e2) {
+		} catch (Exception e2) {
 			throw new XLException("");
 		}
 	}
