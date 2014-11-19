@@ -127,10 +127,9 @@ public class Sheet extends Observable implements Environment {
 	}
 	
 	private void clearCircularSlots() {
-		//FIXME FUNKAR INTE
-		Iterator it = slotMap.keySet().iterator();
+		Iterator it = slotMap.entrySet().iterator();
 		while(it.hasNext()) {
-			Map.Entry<String, Slot> pairs = (Map.Entry) it.next();
+			Map.Entry<String,Slot> pairs =  (Entry<String, Slot>) it.next();
 			Slot loopSlot = pairs.getValue();
 			if (loopSlot instanceof CircularSlot) {
 				it.remove();
