@@ -12,30 +12,27 @@ import model.XLException;
 
 public class Editor extends JTextField implements Observer{
 	
-	private Controller ctrl;
+	private Controller controller;
 	
 	public Editor(Controller c) {
         setBackground(Color.WHITE);
         addActionListener(new EditorListener());
-        ctrl = c;
+        controller = c;
     }
 	
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		setText(ctrl.currentString());
+		setText(controller.currentString());
 	}
 	
 	private class EditorListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			try {
-			ctrl.update(getText());
+			controller.update(getText());
 			} catch (XLException e){
 				System.out.println("editor : " + e.getMessage());
-				throw new XLException(e.getMessage());
 			}
 		}
-		
 	}
-	
 }

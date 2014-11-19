@@ -8,6 +8,7 @@ import model.XLException;
 public class Controller extends Observable {
     private Sheet sheet;
     private String current;
+    private String status;
 
     public Controller(Sheet sheet) {
     	this.sheet = sheet;
@@ -37,6 +38,7 @@ public class Controller extends Observable {
     public String currentString() {
     	return sheet.getSlotText(current);
     }
+    
 
     /**
      * Enter content into current slot
@@ -46,6 +48,9 @@ public class Controller extends Observable {
     	sheet.update(current, content);
     	} catch (XLException e){
     		System.out.println("controller : " + e.getMessage());
+    		status = e.getMessage();
+    		setChanged();
+    		this.notifyObservers(status);
     		throw new XLException(e.getMessage());
     	}
     	setChanged();

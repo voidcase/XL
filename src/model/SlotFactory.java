@@ -35,12 +35,12 @@ public class SlotFactory {
 
 			System.out.println("factory 1: " + e.getMessage());
 
-			throw new XLException(string + " is not an expression");
+			throw new XLException(" '" + string + "'" + " is not an expression");
 		} catch (IOException e) {
 
 			System.out.println("factory 2: " + e.getMessage());
 
-			throw new XLException(string + " is not a expression");
+			throw new XLException(string + " is not an expression");
 		}
 
 	}
