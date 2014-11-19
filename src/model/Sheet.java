@@ -37,8 +37,16 @@ public class Sheet extends Observable implements Environment{
 		if (slotMap.containsKey(address)){
 			slotMap.remove(address);
 		}
+		
+		try {
 		Slot newSlot = slotFactory.buildSlot(text);
 		slotMap.put(address, newSlot);
+		} catch (XLException e){
+			
+			System.out.println("Sheet 0: " + e.getMessage());
+			
+			throw new XLException(e.getMessage());
+		}
 	}
 
 	public String getSlotText(String address){
@@ -53,6 +61,9 @@ public class Sheet extends Observable implements Environment{
 			try {
 				createSlot(address,input);
 			} catch(XLException e) {
+				
+				System.out.println("Sheet : " + e.getMessage());
+				
 				throw new XLException(e.getMessage());
 
 			}
@@ -80,6 +91,9 @@ public class Sheet extends Observable implements Environment{
 				}
 			} catch (XLException e) {
 				createSlot(address, oldSlot.toString());
+				
+				System.out.println("Sheet2 : " + e.getMessage());
+				
 				throw new XLException(e.getMessage());
 			}
 			setChanged();

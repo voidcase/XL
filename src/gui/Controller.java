@@ -3,6 +3,7 @@ package gui;
 import java.util.Observable;
 
 import model.Sheet;
+import model.XLException;
 
 public class Controller extends Observable {
     private Sheet sheet;
@@ -41,7 +42,12 @@ public class Controller extends Observable {
      * Enter content into current slot
      */
     public void update(String content) {	/*[NOT-AN-OBSERVER]*/
+    	try {
     	sheet.update(current, content);
+    	} catch (XLException e){
+    		System.out.println("controller : " + e.getMessage());
+    		throw new XLException(e.getMessage());
+    	}
     	setChanged();
     	notifyObservers();
     }
