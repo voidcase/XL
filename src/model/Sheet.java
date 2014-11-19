@@ -109,13 +109,13 @@ public class Sheet extends Observable implements Environment {
 					}
 				}
 			} catch (NullPointerException e) {
+				clearCircularSlots();
 				throw new XLException(e.getMessage());
 			} catch (XLException e) {
 				System.out.println("Sheet: exception");
 				createSlot(address, oldSlot.toString());
 				throw new XLException(e.getMessage());
 			}
-
 			setChanged();
 			notifyObservers();
 		}
@@ -127,5 +127,16 @@ public class Sheet extends Observable implements Environment {
 
 	public Set keySet() {
 		return slotMap.keySet();
+	}
+	
+	private void clearCircularSlots() {
+		for (Entry<String, Slot> entry : slotMap.entrySet()) {
+			String key = entry.getKey();
+			Slot loopSlot = entry.getValue();
+			if (loopSlot instanceof CircularSlot) {
+				slotMap.remove(key);
+			}
+		}
+
 	}
 }
