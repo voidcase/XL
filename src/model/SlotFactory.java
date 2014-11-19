@@ -13,7 +13,7 @@ public class SlotFactory {
 	}
 
 	public Slot buildSlot(String string) {
-		System.out.println("factory : rätt 1");
+		System.out.println("factory : rï¿½tt 1");
 
 		StringBuilder sb = new StringBuilder();
 		sb.append(string);
@@ -26,7 +26,7 @@ public class SlotFactory {
 		}
 
 		try {
-			System.out.println("factory : rätt 2 " + string);
+			System.out.println("factory : rï¿½tt 2 " + string);
 
 			Expr expr = parser.build(string);
 			return new ExprSlot(expr);
@@ -40,7 +40,7 @@ public class SlotFactory {
 
 			System.out.println("factory 2: " + e.getMessage());
 
-			throw new XLException(string + " is not a expression");
+			throw new XLException(string + " is not an expression");
 		}
 
 	}
