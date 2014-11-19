@@ -6,12 +6,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Observable;
 import java.util.Set;
-
-
 import expr.Environment;
 
 public class Sheet extends Observable implements Environment {
-
 	private SlotFactory slotFactory;
 	private Map<String, Slot> slotMap;
 	private String status;
@@ -24,6 +21,15 @@ public class Sheet extends Observable implements Environment {
 	public Sheet(HashMap<String, Slot> hashMap) {
 		this();
 		slotMap.putAll(hashMap);
+		setChanged();
+		notifyObservers();
+	}
+
+	public void changeMap(HashMap<String, Slot> map) {
+		slotMap.clear();
+		slotMap.putAll(map);
+		setChanged();
+		notifyObservers();
 	}
 
 	public String getStatus() {
@@ -52,7 +58,6 @@ public class Sheet extends Observable implements Environment {
 		if (slotMap.containsKey(address)) {
 			slotMap.remove(address);
 		}
-
 		try {
 			Slot newSlot = slotFactory.buildSlot(text);
 			slotMap.put(address, newSlot);
@@ -72,6 +77,8 @@ public class Sheet extends Observable implements Environment {
 		if (slotMap.isEmpty()) {
 			try {
 				createSlot(address, input);
+				setChanged();
+				notifyObservers();
 			} catch (XLException e) {
 				throw new XLException(e.getMessage());
 			}
@@ -79,16 +86,16 @@ public class Sheet extends Observable implements Environment {
 			Slot oldSlot = slotMap.get(address);
 			try {
 				if (input.equals("")) {
-					try{
+					try {
 						if (slotMap.containsKey(address)) {
-							for (Entry<String, Slot> entry : slotMap.entrySet()) {
-								String key = entry.getKey();
-								//FIXME Lös problemet med dependencies när vi tar bort en cell
-							}
 							slotMap.remove(address);
+							for (Entry<String, Slot> entry : slotMap.entrySet()) {
+								Slot slot = entry.getValue();
+								slot.value(this);
+							}
 						}
-						
 					} catch (XLException e) {
+						slotMap.put(address, oldSlot);
 						throw new XLException(e.getMessage());
 					}
 				} else {
@@ -102,12 +109,10 @@ public class Sheet extends Observable implements Environment {
 						throw new NullPointerException(e.getMessage());
 					}
 				}
-			} 
-			catch (NullPointerException e) {
+			} catch (NullPointerException e) {
 				clearCircularSlots();
 				throw new XLException(e.getMessage());
-			} 
-			catch (XLException e) {
+			} catch (XLException e) {
 				clearCircularSlots();
 				System.out.println("Sheet: exception");
 				createSlot(address, oldSlot.toString());
@@ -125,16 +130,15 @@ public class Sheet extends Observable implements Environment {
 	public Set keySet() {
 		return slotMap.keySet();
 	}
-	
+
 	private void clearCircularSlots() {
 		Iterator it = slotMap.entrySet().iterator();
-		while(it.hasNext()) {
-			Map.Entry<String,Slot> pairs =  (Entry<String, Slot>) it.next();
+		while (it.hasNext()) {
+			Map.Entry<String, Slot> pairs = (Entry<String, Slot>) it.next();
 			Slot loopSlot = pairs.getValue();
 			if (loopSlot instanceof CircularSlot) {
 				it.remove();
 			}
 		}
-
 	}
 }

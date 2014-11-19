@@ -47,7 +47,7 @@ public class Controller extends Observable {
 		} catch (XLException e) {
 			status = e.getMessage();
 			setChanged();
-			this.notifyObservers(status);
+			notifyObservers(status);
 			throw new XLException(e.getMessage());
 		}
 		setChanged();
