@@ -27,8 +27,6 @@ public class SheetPanel extends BorderPanel implements Observer {
 	public void update(Observable arg0, Object arg1) {
 		String coloredLabel = slots.coloredLabel();
 		
-		System.out.println("sheetpanel " + coloredLabel);
-
 		String current = controller.getCurrent();
 		if(!(current.equals(coloredLabel))){
 			slots.setBackgroundColor(Color.WHITE, coloredLabel);

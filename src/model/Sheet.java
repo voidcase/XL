@@ -57,8 +57,14 @@ public class Sheet extends Observable implements Environment{
 	}
 
 	public void update(String address, String input) {
+		if (slotMap.isEmpty()){
+			try {
+				createSlot(address,input);
+			} catch(XLException e) {
+				throw new XLException(e.getMessage());
 
-		//if (slotMap.containsKey(address)) {
+			}
+		} else {
 			Slot oldSlot = slotMap.get(address);
 			try {
 				if (input.equals("") || input.charAt(0) == '#'){
@@ -74,21 +80,19 @@ public class Sheet extends Observable implements Environment{
 						createSlot(key, loopSlot.toString());
 					}
 				} else {
-					
 					CircularSlot circSlot = new CircularSlot();
 					slotMap.put(address, circSlot);
 					Slot tempSlot = slotFactory.buildSlot(input);
 					tempSlot.value(this);
 					createSlot(address, input);
 				}
-
 			} catch (XLException e) {
 				createSlot(address, oldSlot.toString());
 				throw new XLException(e.getMessage());
 			}
 			setChanged();
 			notifyObservers();
-		//}
+		}
 	}
 	
 	public void remove(String address) {
