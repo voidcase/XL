@@ -32,9 +32,6 @@ public class SlotLabels extends GridPanel {
         firstLabel.setBackground(Color.YELLOW);
 
         coloredLabel = firstLabel.address();
-
-        labelList.get(21).setBackground(Color.CYAN);
-
     }
 
     public List<Observer> listObservers() {
