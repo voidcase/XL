@@ -7,13 +7,13 @@ import java.util.Observable;
 import java.util.Set;
 import expr.Environment;
 
-public class Sheet extends Observable implements Environment{
+public class Sheet extends Observable implements Environment {
 
 	private SlotFactory slotFactory;
 	private Map<String, Slot> slotMap;
 	private String status;
 
-	public Sheet(){
+	public Sheet() {
 		slotFactory = new SlotFactory();
 		slotMap = new HashMap<String, Slot>();
 	}
@@ -33,64 +33,62 @@ public class Sheet extends Observable implements Environment{
 			Slot tempSlot = slotMap.get(name);
 			return tempSlot.value(this);
 		} catch (NullPointerException e) {
-			throw new XLException("En eller flera celler du försökte använda i ditt expression är blanka");
-		}
+			throw new XLException(
+					"One or more cells that you tried to use in your expression are blank");
+		} 
 	}
-	
-	public String valueText(String name){
-		if (!slotMap.containsKey(name)){
+
+	public String valueText(String name) {
+		if (!slotMap.containsKey(name)) {
 			return "";
 		}
 		return String.valueOf(slotMap.get(name).value(this));
 	}
-	
 
-	public void createSlot(String address, String text){
-		if (slotMap.containsKey(address)){
+	public void createSlot(String address, String text) {
+		if (slotMap.containsKey(address)) {
 			slotMap.remove(address);
 		}
-		
+
 		try {
-		Slot newSlot = slotFactory.buildSlot(text);
-		slotMap.put(address, newSlot);
-		} catch (XLException e){
-			
-			System.out.println("Sheet 0: " + e.getMessage());
-			
+			Slot newSlot = slotFactory.buildSlot(text);
+			slotMap.put(address, newSlot);
+		} catch (XLException e) {
 			throw new XLException(e.getMessage());
 		}
 	}
 
-	public String getSlotText(String address){
-		if (!slotMap.containsKey(address)){
+	public String getSlotText(String address) {
+		if (!slotMap.containsKey(address)) {
 			return "";
 		}
 		return slotMap.get(address).toString();
 	}
 
 	public void update(String address, String input) {
-		if (slotMap.isEmpty()){
+		if (input == null){
+			System.out.println("Sheet: input ‰r null");
+		}
+		
+		if (slotMap.isEmpty()) {
 			try {
-				createSlot(address,input);
-			} catch(XLException e) {
-				
-				System.out.println("Sheet : " + e.getMessage());
-				
+				createSlot(address, input);
+			} catch (XLException e) {
 				throw new XLException(e.getMessage());
-
 			}
 		} else {
 			Slot oldSlot = slotMap.get(address);
 			try {
-				if (input.equals("")){
-					for(Entry<String, Slot> entry:slotMap.entrySet()){
+				if (input.equals("")) {
+					for (Entry<String, Slot> entry : slotMap.entrySet()) {
 						String key = entry.getKey();
 						Slot loopSlot = entry.getValue();
 						oldSlot = slotMap.get(key);
 						CircularSlot circSlot = new CircularSlot();
 						slotMap.remove(key);
 						slotMap.put(key, circSlot);
-						Slot tempSlot = slotFactory.buildSlot(loopSlot.toString());
+						Slot tempSlot = slotFactory.buildSlot(loopSlot
+								.toString());
 						tempSlot.value(this);
 						createSlot(key, loopSlot.toString());
 					}
@@ -103,21 +101,18 @@ public class Sheet extends Observable implements Environment{
 				}
 			} catch (XLException e) {
 				createSlot(address, oldSlot.toString());
-				
-				System.out.println("Sheet2 : " + e.getMessage());
-				
 				throw new XLException(e.getMessage());
 			}
 			setChanged();
 			notifyObservers();
 		}
 	}
-	
+
 	public void remove(String address) {
 		slotMap.remove(address);
 	}
 
-	public Set keySet(){
+	public Set keySet() {
 		return slotMap.keySet();
 	}
 }
