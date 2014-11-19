@@ -16,6 +16,7 @@ public class SlotFactory {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append(string);
+		
 		try {
 
 			if (sb.charAt(0) == '#') {
