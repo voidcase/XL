@@ -46,35 +46,8 @@ public class SlotLabels extends GridPanel {
 
     	int newNum = Character.getNumericValue(ch)-10 + (num - 1) * 8;
 		labelList.get(newNum).setBackground(color);
-    	
-//    	if (ch == 'A') {
-//    		int newNum = 0 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} else if (ch == 'B') {
-//    		int newNum = 1 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} else if (ch == 'C') {
-//    		int newNum = 2 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} else if (ch == 'D') {
-//    		int newNum = 3 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} else if (ch == 'E') {
-//    		int newNum = 4 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} else if (ch == 'F') {
-//    		int newNum = 5 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} else if (ch == 'G') {
-//    		int newNum = 6 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} else if (ch == 'H') {
-//    		int newNum = 7 + (num - 1) * 8;
-//    		labelList.get(newNum).setBackground(color);
-//    	} 
-    	
-    	
-    	  coloredLabel = address;
+
+    	coloredLabel = address;
     }
     
     public String coloredLabel(){
