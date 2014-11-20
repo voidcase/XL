@@ -19,8 +19,8 @@ public class XLBufferedReader extends BufferedReader {
                 if (!string.substring(0,i).matches("[A-H][1-9][0]?"))
 					throw new XLException("Not XL file");
 				else
-					map.put(string.substring(0,i),factory.buildSlot(string.substring(i+1).toUpperCase())); //FIXME: om man savear och loadar kommer alla kommentarer vara i ALL CAPS!
-            }
+					map.put(string.substring(0,i).toUpperCase(),factory.buildSlot(string.substring(i+1))); 
+                }
         } catch (Exception e) {
             throw new XLException(e.getMessage());
         }
