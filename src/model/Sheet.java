@@ -99,7 +99,7 @@ public class Sheet extends Observable implements Environment {
 						}
 					} catch (XLException e) {
 						slotMap.put(address, oldSlot);
-						throw new XLException(e.getMessage());
+						throw new XLException("Other cells depend on this cell");
 					}
 				} else {
 					try {
