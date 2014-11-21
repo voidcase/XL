@@ -29,7 +29,6 @@ public class SlotLabel extends ColoredLabel implements Observer, MouseListener {
 	}
 
 	@Override
-
 	public void update(Observable arg0, Object arg1) {
 		sheet = (Sheet) arg0;
 		String string = sheet.valueText("" + col + "" + row);

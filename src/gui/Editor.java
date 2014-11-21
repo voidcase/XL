@@ -9,7 +9,6 @@ import java.util.Observer;
 import javax.swing.JTextField;
 
 import model.XLException;
-//FIXME: Enter måste tryckas ner 2 ggr första gången.
 public class Editor extends JTextField implements Observer {
 
 	private Controller controller;

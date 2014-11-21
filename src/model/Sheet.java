@@ -153,13 +153,6 @@ public class Sheet extends Observable implements Environment {
 		slotMap.remove(address);
 	}
 	
-	private void circularSlotCheck(String address, String input) {
-		CircularSlot circSlot = new CircularSlot();
-		slotMap.put(address, circSlot);
-		Slot tempSlot = slotFactory.buildSlot(input);
-		tempSlot.value(this);
-	}
-
 	public Set keySet() {
 		return slotMap.keySet();
 	}

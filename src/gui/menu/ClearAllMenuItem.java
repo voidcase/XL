@@ -10,7 +10,7 @@ import model.Sheet;
 
 class ClearAllMenuItem extends JMenuItem implements ActionListener {
 	
-	Sheet sheet;
+	private Sheet sheet;
 	
     public ClearAllMenuItem(Sheet s) {
         super("Clear all");

@@ -8,14 +8,15 @@ import javax.swing.JMenuItem;
 
 class ClearMenuItem extends JMenuItem implements ActionListener {
     
-	private Controller ctrl;
+	private Controller controller;
+	
 	public ClearMenuItem(Controller c) {
         super("Clear");
         addActionListener(this);
-        ctrl = c;
+        controller = c;
     }
 
     public void actionPerformed(ActionEvent e) {
-    	ctrl.update("");
+    	controller.update("");
     }
 }

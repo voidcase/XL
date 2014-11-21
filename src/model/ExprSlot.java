@@ -4,7 +4,7 @@ import expr.Environment;
 import expr.Expr;
 
 public class ExprSlot implements Slot {
-	Expr ex;
+	private Expr ex;
 
 	public ExprSlot(Expr expr) {
 		ex = expr;

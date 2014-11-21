@@ -15,19 +15,17 @@ import model.Sheet;
 import model.XLPrintStream;
 
 class SaveMenuItem extends OpenMenuItem {
-	//FIXME Sparas inte som en XL-fil
-
-	private Sheet blad;
+	private Sheet sheet;
 
 	public SaveMenuItem(XL xl, StatusLabel statusLabel, Sheet s) {
 		super(xl, statusLabel, "Save");
-		blad = s;
+		sheet = s;
 	}
 
 	protected void action(String path) throws FileNotFoundException {
-		XLPrintStream stream = new XLPrintStream(path);
-		Set<String> keys = blad.keySet();
-		stream.save(keys, blad);
+		XLPrintStream stream = new XLPrintStream(path + ".xl");
+		Set<String> keys = sheet.keySet();
+		stream.save(keys, sheet);
 	}
 
 	protected int openDialog(JFileChooser fileChooser) {

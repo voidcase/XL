@@ -10,7 +10,7 @@ import java.util.Observer;
 
 public class SheetPanel extends BorderPanel implements Observer {
     private SlotLabels slots;
-    Controller controller;
+    private Controller controller;
     
     public SheetPanel(int rows, int columns, Controller controller) {
         add(WEST, new RowLabels(rows));
