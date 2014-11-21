@@ -15,6 +15,7 @@ import model.Sheet;
 import model.XLPrintStream;
 
 class SaveMenuItem extends OpenMenuItem {
+	//FIXME Sparas inte som en XL-fil
 
 	private Sheet blad;
 

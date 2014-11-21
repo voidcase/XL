@@ -95,7 +95,10 @@ public class Sheet extends Observable implements Environment {
 				slotMap.put(address, circSlot);
 				Slot tempSlot = slotFactory.buildSlot(input);
 				tempSlot.value(this);
-				createSlot(address, input);
+				createSlot(address, input);				
+				setChanged();
+				notifyObservers();
+
 			} catch (NullPointerException e) {
 				slotMap.remove(address);
 				throw new XLException(e.getMessage());
@@ -155,5 +158,10 @@ public class Sheet extends Observable implements Environment {
 
 	public Set keySet() {
 		return slotMap.keySet();
+	}
+	
+	public void updateView() {
+		setChanged();
+		notifyObservers();
 	}
 }
