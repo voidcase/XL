@@ -29,7 +29,11 @@ public class Sheet extends Observable implements Environment {
 	public void changeMap(HashMap<String, Slot> map) {
 		slotMap.clear();
 		slotMap.putAll(map);
-		
+		for (Entry<String, Slot> entry : map.entrySet()) {
+			String key = entry.getKey();
+			Slot value = entry.getValue();
+			update(key, value.toString());
+		}
 		setChanged();
 		notifyObservers();
 	}
