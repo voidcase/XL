@@ -78,12 +78,30 @@ public class Sheet extends Observable implements Environment {
 	public void update(String address, String input) {
 		if (slotMap.isEmpty()) {
 			try {
+				CircularSlot circSlot = new CircularSlot();
+				slotMap.put(address, circSlot);
+				Slot tempSlot = slotFactory.buildSlot(input);
+				tempSlot.value(this);
 				createSlot(address, input);
 				setChanged();
 				notifyObservers();
 			} catch (XLException e) {
 				throw new XLException(e.getMessage());
-			}
+			} 
+		} else if (!slotMap.containsKey(address)) {
+			try {
+				CircularSlot circSlot = new CircularSlot();
+				slotMap.put(address, circSlot);
+				Slot tempSlot = slotFactory.buildSlot(input);
+				tempSlot.value(this);
+				createSlot(address, input);
+			} catch (NullPointerException e) {
+				slotMap.remove(address);
+				throw new XLException(e.getMessage());
+			} catch (XLException e1) {
+				slotMap.remove(address);
+				throw new XLException(e1.getMessage());
+			} 
 		} else {
 			Slot oldSlot = slotMap.get(address);
 			try {
@@ -97,7 +115,7 @@ public class Sheet extends Observable implements Environment {
 							}
 						}
 					} catch (XLException e) {
-						slotMap.put(address, oldSlot);
+						createSlot(address, oldSlot.toString());
 						throw new XLException("Other cells depend on this cell");
 					}
 				} else {
@@ -125,6 +143,13 @@ public class Sheet extends Observable implements Environment {
 
 	public void remove(String address) {
 		slotMap.remove(address);
+	}
+	
+	private void circularSlotCheck(String address, String input) {
+		CircularSlot circSlot = new CircularSlot();
+		slotMap.put(address, circSlot);
+		Slot tempSlot = slotFactory.buildSlot(input);
+		tempSlot.value(this);
 	}
 
 	public Set keySet() {
