@@ -86,6 +86,7 @@ public class Sheet extends Observable implements Environment {
 				setChanged();
 				notifyObservers();
 			} catch (XLException e) {
+				slotMap.remove(address);
 				throw new XLException(e.getMessage());
 			} 
 		} else if (!slotMap.containsKey(address)) {
