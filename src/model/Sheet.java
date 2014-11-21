@@ -91,7 +91,6 @@ public class Sheet extends Observable implements Environment {
 					try {
 						if (slotMap.containsKey(address)) {
 							slotMap.remove(address);
-
 							for (Entry<String, Slot> entry : slotMap.entrySet()) {
 								Slot slot = entry.getValue();
 								slot.value(this);

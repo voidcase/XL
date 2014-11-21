@@ -24,13 +24,16 @@ public class SlotFactory {
 			}
 
 			try {
+				System.out.println("Try");
 				Expr expr = parser.build(string);
 				return new ExprSlot(expr);
 
 			} catch (XLException e) {
+				System.out.println("XL");
 				throw new XLException(" '" + string + "'"
 						+ " is not an expression");
 			} catch (IOException e) {
+				System.out.println("IO");
 				throw new XLException(" '" + string + "'"
 						+ " is not an expression");
 			}
