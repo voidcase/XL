@@ -28,13 +28,16 @@ public class SlotFactory {
 				return new ExprSlot(expr);
 
 			} catch (XLException e) {
+				System.out.println("factory: xl");
 				throw new XLException(" '" + string + "'"
 						+ " is not an expression");
 			} catch (IOException e) {
+				System.out.println("factory: io");
 				throw new XLException(" '" + string + "'"
 						+ " is not an expression");
 			}
 		} catch (Exception e2) {
+			System.out.println("factory: empty");
 			throw new XLException("");
 		}
 	}
